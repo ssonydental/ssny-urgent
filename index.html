@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emergency Dentist Manhasset: Seen in 60 Minutes | Urgent Care Dental</title>
+<meta name="description" content="All-inclusive emergency exam with all X-ray images, including a panoramic scan and a 3D CBCT scan. Clinician on site Friday through Monday, walk-ins welcome, most patients seen within 60 minutes. Exit 33 on the L.I.E. Smile Services of New York.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Emergency Dentist Manhasset: Seen in 60 Minutes">
+<meta property="og:description" content="All-inclusive exam & X-rays. Emergency dentists on site Friday through Monday, 6:30am to 10pm. Call (516) 500-7400.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://urgent.ssonydental.com/">
+<meta property="og:site_name" content="Smile Services of New York">
+
+<!-- Consent default (belt-and-suspenders alongside the GTM Consent Default tag) -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'granted',
+  ad_user_data: 'granted',
+  ad_personalization: 'granted',
+  analytics_storage: 'granted'
+});
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MRQ3RPBM');</script>
+<!-- End Google Tag Manager -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "Smile Services of New York: Urgent Care Dental",
+  "url": "https://urgent.ssonydental.com/",
+  "telephone": "+15165007400",
+  "priceRange": "Call for pricing",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "444 Community Drive, Suite 309",
+    "addressLocality": "Manhasset",
+    "addressRegion": "NY",
+    "postalCode": "11030",
+    "addressCountry": "US"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Friday","Saturday","Sunday"],
+      "opens": "06:30",
+      "closes": "22:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday"],
+      "opens": "06:30",
+      "closes": "17:00"
+    }
+  ],
+  "potentialAction": {
+    "@type": "ReserveAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://schedule.jarvisanalytics.com/frame?eoid=14250&elid=14000000000373",
+      "actionPlatform": ["http://schema.org/DesktopWebPlatform","http://schema.org/MobileWebPlatform"]
+    },
+    "result": {"@type": "Reservation", "name": "Emergency dental appointment"}
+  }
+}
+</script>
+
+<style>
+:root{
+  --navy:#0B1D3A;
+  --bg:#040d1c;
+  --red:#C8102E;
+  --red-bright:#E31837;
+  --lavender:#C8B8E8;
+  --aqua:#00A4E4;
+  --xray:#BFE9FF;
+  --pearl:#F7F4EC;
+  --ink-soft:rgba(247,244,236,.72);
+  --ink-faint:rgba(247,244,236,.45);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  background:radial-gradient(ellipse at 50% 0%,#0a1c36 0%,var(--bg) 60%);
+  color:var(--pearl);
+  overflow-x:hidden;
+  line-height:1.6;
+}
+
+/* Cinematic X-Ray background container */
+#xray-container{
+  position:fixed;inset:0;width:100%;height:100vh;z-index:1;pointer-events:none;
+  overflow:hidden;display:flex;align-items:center;justify-content:center;
+}
+.pano-image{
+  position:absolute;width:130vw;height:130vh;object-fit:cover;
+  opacity:0.28;mix-blend-mode:screen;filter:contrast(145%) brightness(90%) hue-rotate(185deg);
+  transform-origin:center center;transition:transform 0.1s linear, filter 0.3s ease;
+}
+.film{
+  position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.35;
+  background:repeating-linear-gradient(180deg,rgba(191,233,255,.028) 0 1px,transparent 1px 4px);
+}
+.vignette{
+  position:fixed;inset:0;z-index:2;pointer-events:none;
+  background:radial-gradient(ellipse at center,transparent 45%,rgba(2,8,18,.9) 100%);
+}
+main{position:relative;z-index:3}
+
+/* ---------- top bar ---------- */
+.topbar{
+  position:fixed;top:0;left:0;right:0;z-index:10;
+  display:flex;flex-wrap:wrap;row-gap:10px;align-items:center;justify-content:space-between;
+  padding:16px clamp(16px,4vw,48px);
+  background:linear-gradient(180deg,rgba(4,13,28,.88),rgba(4,13,28,0));
+  backdrop-filter:blur(6px);
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-logo{height:46px;width:46px;display:block;flex-shrink:0;border-radius:50%;object-fit:cover}
+.wordmark{font-family:'Playfair Display',serif;font-weight:600;font-size:1.05rem;line-height:1.25}
+.wordmark span{color:var(--lavender)}
+.wordmark .subname{
+  display:block;font-family:'Inter',sans-serif;font-weight:700;font-size:.68rem;
+  letter-spacing:.06em;margin-top:2px;
+}
+.wordmark .subname .u1{color:var(--red-bright)}
+.wordmark .subname .u2{color:var(--aqua)}
+.call-pill{
+  background:var(--red);color:#fff;text-decoration:none;font-weight:600;font-size:.88rem;
+  padding:10px 20px;border-radius:100px;border:1px solid transparent;transition:background .2s,transform .2s;white-space:nowrap;flex-shrink:0;
+}
+.call-pill:hover{background:var(--red-bright);transform:translateY(-1px)}
+.call-pill:focus-visible,.btn:focus-visible,.modal-close:focus-visible{outline:2px solid var(--aqua);outline-offset:3px}
+.topbar-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.book-pill{
+  background:transparent;color:var(--pearl);font-family:'Inter',sans-serif;font-weight:600;font-size:.88rem;
+  padding:10px 20px;border-radius:100px;border:1px solid rgba(247,244,236,.4);cursor:pointer;
+  transition:border-color .2s,transform .2s,background .2s;white-space:nowrap;flex-shrink:0;line-height:1.6;
+}
+.book-pill:hover{border-color:var(--aqua);background:rgba(191,233,255,.08);transform:translateY(-1px)}
+.book-pill:focus-visible{outline:2px solid var(--aqua);outline-offset:3px}
+
+/* ---------- sections ---------- */
+section{
+  min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+  padding:120px clamp(20px,6vw,80px);position:relative;
+}
+.copy{max-width:530px}
+.copy.right{margin-left:auto}
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:500;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--lavender);margin-bottom:18px;
+}
+.eyebrow .tick{color:var(--aqua)}
+.price-badge{
+  display:inline-block;font-family:'Inter',sans-serif;font-weight:600;font-size:.82rem;
+  letter-spacing:.05em;text-transform:uppercase;color:var(--xray);margin-bottom:16px;
+}
+h1,h2{font-family:'Playfair Display',serif;font-weight:600;line-height:1.12}
+h1{font-size:clamp(2.4rem,6vw,4.3rem);margin-bottom:22px}
+h2{font-size:clamp(1.9rem,4vw,2.9rem);margin-bottom:18px}
+.lede{font-size:clamp(1rem,1.6vw,1.18rem);color:var(--ink-soft);margin-bottom:30px;max-width:46ch}
+.accent{color:var(--lavender);font-style:italic}
+.danger{color:var(--red-bright)}
+
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn{
+  display:inline-block;text-decoration:none;font-weight:600;font-size:1rem;
+  padding:16px 32px;border-radius:100px;transition:transform .2s,background .2s,border-color .2s;
+  cursor:pointer;font-family:'Inter',sans-serif;white-space:nowrap;flex-shrink:0;
+}
+.btn-call{background:var(--red);color:#fff}
+.btn-call:hover{background:var(--red-bright);transform:translateY(-2px)}
+.btn-ghost{border:1px solid rgba(247,244,236,.35);color:var(--pearl);background:transparent}
+.btn-ghost:hover{border-color:var(--lavender);transform:translateY(-2px)}
+.hero-note{margin-top:26px;font-size:.85rem;color:var(--ink-faint)}
+.hero-note strong{color:var(--pearl)}
+
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .7s ease}
+html.no-io .reveal{opacity:1;transform:none;transition:none}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .pano-image{transition:none}
+  html{scroll-behavior:auto}
+}
+
+.symptom-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 26px;margin-top:6px}
+.symptom{
+  display:flex;gap:10px;align-items:flex-start;font-family:'Inter',sans-serif;font-size:.94rem;color:var(--ink-soft);
+  padding:9px 0;border-bottom:1px solid rgba(191,233,255,.12);
+}
+.symptom svg{width:16px;height:16px;flex-shrink:0;margin-top:3px}
+
+/* ---------- benefits strip ---------- */
+.benefits{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 28px;
+  margin-top:24px;padding-top:22px;border-top:1px solid rgba(191,233,255,.12);
+}
+.benefit{
+  display:flex;align-items:center;gap:10px;font-family:'Inter',sans-serif;
+  font-size:.92rem;font-weight:500;color:var(--pearl);
+}
+.benefit svg{width:16px;height:16px;flex-shrink:0}
+
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:8px}
+.why-card{
+  padding:20px;border-radius:16px;background:rgba(191,233,255,.05);
+  border:1px solid rgba(191,233,255,.14);
+}
+.why-card .big{font-family:'Playfair Display',serif;font-size:1.6rem;line-height:1.1;margin-bottom:6px}
+.why-card .small{font-size:.84rem;color:var(--ink-faint)}
+
+.loc-inline{margin-top:28px;padding:22px 24px;border-radius:16px;background:rgba(191,233,255,.05);border:1px solid rgba(191,233,255,.14)}
+.loc-inline .loc-label{
+  font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:500;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--lavender);margin-bottom:12px;display:block;
+}
+.loc-inline address{font-style:normal;color:var(--ink-soft);font-size:.95rem;margin-bottom:16px;display:block}
+.loc-inline a{
+  color:var(--pearl);text-decoration:none;font-weight:600;font-size:.85rem;
+  border:1px solid rgba(247,244,236,.35);padding:9px 18px;border-radius:100px;
+  display:inline-block;transition:border-color .2s,transform .2s;
+}
+.loc-inline a:hover{border-color:var(--aqua);transform:translateY(-1px)}
+
+/* ---------- visit / map section ---------- */
+.visit-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,48px);align-items:stretch;margin-top:10px}
+.map-frame{
+  position:relative;border-radius:18px;overflow:hidden;min-height:340px;
+  border:1px solid rgba(191,233,255,.18);box-shadow:0 14px 40px rgba(0,0,0,.32);
+}
+.map-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.25) contrast(1.05)}
+.visit-facts{display:flex;flex-direction:column;gap:18px}
+.fact-card{padding:20px 22px;border-radius:16px;background:rgba(191,233,255,.05);border:1px solid rgba(191,233,255,.14)}
+.fact-card .k{
+  font-family:'IBM Plex Mono',monospace;font-size:.68rem;font-weight:500;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--lavender);display:block;margin-bottom:10px;
+}
+.fact-card address{font-style:normal;color:var(--ink-soft);font-size:.98rem;line-height:1.55}
+.fact-card .sub{font-size:.85rem;color:var(--ink-faint);margin-top:6px}
+.hours-list{display:flex;flex-direction:column;gap:7px}
+.hours-list div{display:flex;justify-content:space-between;gap:16px;font-size:.9rem;color:var(--ink-soft);border-bottom:1px solid rgba(191,233,255,.1);padding-bottom:6px}
+.hours-list div:last-child{border-bottom:0;padding-bottom:0}
+.hours-list span:last-child{color:var(--pearl);font-weight:600}
+.map-cta{
+  color:var(--pearl);text-decoration:none;font-weight:600;font-size:.85rem;
+  border:1px solid rgba(247,244,236,.35);padding:11px 20px;border-radius:100px;
+  display:inline-block;margin-top:14px;transition:border-color .2s,transform .2s;
+}
+.map-cta:hover{border-color:var(--aqua);transform:translateY(-1px)}
+
+/* ---------- what to expect steps ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,28px);margin-top:14px}
+.step{
+  padding:26px 24px;border-radius:18px;background:rgba(191,233,255,.05);
+  border:1px solid rgba(191,233,255,.14);display:flex;flex-direction:column;gap:12px;
+}
+.step .n{
+  font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:500;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--lavender);
+}
+.step h3{font-family:'Playfair Display',serif;font-weight:600;font-size:1.28rem;line-height:1.25;color:var(--pearl)}
+.step p{font-size:.92rem;color:var(--ink-faint);line-height:1.6}
+
+/* ---------- google rating summary ---------- */
+.rating-row{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  margin-top:20px;background:transparent;
+}
+.rating-row .stars{display:flex;gap:3px}
+.rating-row .stars svg{width:17px;height:17px;display:block}
+.rating-row .score{
+  font-family:'Playfair Display',serif;font-weight:600;font-size:1.5rem;
+  line-height:1;color:var(--pearl);
+}
+.rating-row .count{
+  display:flex;align-items:center;gap:7px;
+  font-family:'Inter',sans-serif;font-size:.86rem;color:var(--ink-faint);
+}
+.rating-row .count svg{width:14px;height:14px;display:block;flex-shrink:0}
+.rating-row .divider{width:1px;height:20px;background:rgba(191,233,255,.2)}
+
+/* ---------- financing partners marquee ---------- */
+.partners{margin-top:36px;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:44px 0 40px;border-top:1px solid rgba(191,233,255,.12)}
+.fin-intro{
+  max-width:760px;margin:0 auto 34px;padding:0 clamp(20px,6vw,80px);text-align:center;
+}
+.fin-intro .eyebrow{justify-content:center;display:flex;align-items:center;gap:8px}
+.fin-intro h2{
+  font-family:'Playfair Display',serif;font-weight:600;color:var(--pearl);
+  font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.15;margin:0 0 14px;
+}
+.fin-intro p{
+  font-family:'Inter',sans-serif;font-size:1rem;color:var(--ink-faint);
+  line-height:1.65;margin:0;text-wrap:pretty;
+}
+.partners .plabel{
+  font-family:'IBM Plex Mono',monospace;font-size:1.15rem;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--pearl);margin:0 0 30px;text-align:center;
+}
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee-track{display:flex;width:max-content;align-items:center;gap:clamp(48px,7vw,96px);animation:partners-scroll 26s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.partner-chip{flex-shrink:0;display:flex;align-items:center;justify-content:center;height:92px;padding:16px 32px;background:var(--pearl);border-radius:14px;box-shadow:0 8px 22px rgba(0,0,0,.18)}
+.partner-chip img{height:100%;width:auto;max-width:290px;object-fit:contain;display:block}
+@keyframes partners-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marquee-track{animation:none}}
+
+section[data-depth="relief"]{padding-bottom:40px}
+.final{text-align:center;align-items:center;padding-top:40px}
+.final .copy{max-width:640px;margin:0 auto}
+
+.brand-strip{
+  position:relative;z-index:3;
+  display:flex;align-items:center;justify-content:center;gap:clamp(28px,6vw,64px);
+  flex-wrap:wrap;padding:56px clamp(20px,6vw,80px);
+  border-top:1px solid rgba(191,233,255,.1);
+}
+.brand-strip img{
+  height:clamp(84px,11vw,110px);width:clamp(84px,11vw,110px);
+  border-radius:50%;object-fit:cover;display:block;
+  box-shadow:0 6px 20px rgba(0,0,0,.35);
+  transition:transform .2s ease;
+}
+.brand-strip img:hover{transform:translateY(-3px)}
+
+footer{
+  position:relative;z-index:3;padding:56px clamp(20px,6vw,80px) 120px;
+  font-size:.8rem;color:var(--ink-faint);border-top:1px solid rgba(191,233,255,.1);
+}
+.footer-grid{
+  display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:clamp(28px,4vw,56px);
+  align-items:start;max-width:1180px;
+}
+.footer-brand img{height:54px;width:54px;border-radius:50%;object-fit:cover;display:block;margin-bottom:14px}
+.footer-brand .fname{
+  font-family:'Playfair Display',serif;font-weight:600;font-size:1.1rem;
+  color:var(--pearl);line-height:1.3;margin-bottom:4px;
+}
+.footer-brand .fsub{
+  font-family:'Inter',sans-serif;font-weight:700;font-size:.66rem;letter-spacing:.06em;
+  text-transform:uppercase;margin-bottom:12px;
+}
+.footer-brand .fsub .u1{color:var(--red-bright)}
+.footer-brand .fsub .u2{color:var(--aqua)}
+.footer-brand p{font-size:.86rem;color:var(--ink-soft);line-height:1.6;max-width:34ch}
+footer .fcol .fh{
+  font-family:'IBM Plex Mono',monospace;font-size:.66rem;font-weight:500;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--lavender);display:block;margin-bottom:12px;
+}
+footer .fcol address,footer .fcol .fline{
+  font-style:normal;font-size:.86rem;color:var(--ink-soft);line-height:1.65;display:block;
+}
+footer .fcol .fstrong{color:var(--pearl);font-weight:600}
+footer .fcol a{color:var(--pearl);text-decoration:none;font-weight:600}
+footer .fcol a:hover{color:var(--aqua)}
+footer .fhours div{display:flex;justify-content:space-between;gap:14px;font-size:.85rem;color:var(--ink-soft);padding:5px 0;border-bottom:1px solid rgba(191,233,255,.1)}
+footer .fhours div:last-child{border-bottom:0}
+footer .fhours span:last-child{color:var(--pearl);font-weight:600;white-space:nowrap}
+.footer-base{
+  margin-top:40px;padding-top:22px;border-top:1px solid rgba(191,233,255,.1);
+  display:flex;flex-direction:column;gap:12px;max-width:1180px;
+}
+.footer-base .copyright{font-size:.82rem;color:var(--ink-soft)}
+.footer-base .disclaimer{font-size:.72rem;color:var(--ink-faint);line-height:1.65;max-width:88ch}
+
+.callbar{
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:20;
+  background:var(--red);padding:14px 20px calc(14px + env(safe-area-inset-bottom));text-align:center;
+}
+.callbar a{color:#fff;text-decoration:none;font-weight:700;font-size:1.05rem}
+
+/* ---------- booking modal ---------- */
+.modal-overlay{
+  position:fixed;inset:0;z-index:50;display:none;
+  background:rgba(4,13,28,.9);backdrop-filter:blur(8px);
+  align-items:center;justify-content:center;padding:20px;
+}
+.modal-overlay.open{display:flex}
+.modal-shell{
+  position:relative;width:min(560px,100%);height:min(760px,92vh);
+  background:#fff;border-radius:20px;overflow:hidden;
+  box-shadow:0 24px 80px rgba(0,0,0,.55);
+  display:flex;flex-direction:column;
+}
+.modal-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 18px;background:var(--navy);flex-shrink:0;
+}
+.modal-head .mtitle{font-family:'Playfair Display',serif;font-size:1rem;color:var(--pearl)}
+.modal-close{
+  background:transparent;border:1px solid rgba(247,244,236,.35);color:var(--pearl);
+  border-radius:100px;width:34px;height:34px;font-size:1.05rem;cursor:pointer;line-height:1;
+}
+.modal-close:hover{border-color:var(--lavender)}
+.modal-shell iframe{flex:1;width:100%;border:0;background:#fff}
+.modal-fallback{
+  padding:10px 18px;background:#f4f6fa;font-size:.8rem;text-align:center;flex-shrink:0;
+}
+.modal-fallback a{color:var(--aqua);font-weight:600;text-decoration:none}
+.modal-fallback a:hover{text-decoration:underline}
+
+@media (max-width:760px){
+  .symptom-grid,.why-grid,.visit-grid,.steps{grid-template-columns:1fr}
+  .benefits{grid-template-columns:1fr;gap:2px}
+  .footer-grid{grid-template-columns:1fr;gap:32px}
+  .step{padding:22px 20px}
+  .hours-list div{font-size:.95rem}
+  .map-frame{min-height:260px}
+  .copy.right{margin-left:0}
+  .callbar{display:block}
+  section{padding-top:100px;padding-bottom:80px}
+  footer{padding-bottom:160px}
+  .modal-shell{height:94vh;border-radius:16px}
+  .brand-logo{height:38px;width:38px}
+  .wordmark{font-size:.92rem}
+  .wordmark .subname{font-size:.62rem}
+  .btn{padding:14px 26px;font-size:.94rem}
+  .book-pill{font-size:.82rem;padding:9px 16px}
+  .partner-chip{height:64px;padding:12px 22px}
+  .partner-chip img{max-width:190px}
+}
+@media (max-width:400px){
+  .call-pill{font-size:.8rem;padding:9px 16px}
+  .topbar-actions .book-pill{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRQ3RPBM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div id="xray-container" aria-hidden="true">
+  <img id="pano-bg" class="pano-image" src="assets/pano-xray.jpg" alt="">
+</div>
+
+<div class="film" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="brand">
+    <img class="brand-logo" src="assets/logo-urgentcare.png" alt="Urgent Care Dental logo" onerror="this.style.display='none'">
+    <div class="wordmark">Smile Services <span>of New York</span><span class="subname"><span class="u1">Urgent Care</span> <span class="u2">Dental</span></span></div>
+  </div>
+  <div class="topbar-actions">
+    <a class="call-pill" href="tel:5165007400" data-track="call" data-loc="topbar">Call (516) 500-7400</a>
+    <button class="book-pill" data-track="book" data-loc="topbar">Book online</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- 1 · HERO -->
+  <section data-depth="hero">
+    <div class="copy reveal">
+      <p class="price-badge">Same-day emergency appointments available</p>
+      <h1>We see what's <span class="accent">causing the pain.</span></h1>
+      <p class="lede">One visit covers your exam and all X-ray images, including a panoramic scan and a 3D CBCT scan, with no surprise fees. Most patients seen within 60 minutes, right off Exit 33 on the L.I.E.</p>
+      <div class="cta-row">
+        <a class="btn btn-call" href="tel:5165007400" data-track="call" data-loc="hero">Call now to get seen today</a>
+        <button class="btn btn-ghost" data-track="book" data-loc="hero">Book online</button>
+      </div>
+      <p class="hero-note"><strong>Walk-ins accepted</strong> · Exam, panoramic scan & 3D CBCT scan included · On-site oral surgeons</p>
+      <!-- REVIEWS: update rating + count here -->
+      <div class="rating-row">
+        <span class="stars" role="img" aria-label="Rated 4.9 out of 5">
+          <svg viewBox="0 0 20 20" fill="#F5B325" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg>
+          <svg viewBox="0 0 20 20" fill="#F5B325" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg>
+          <svg viewBox="0 0 20 20" fill="#F5B325" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg>
+          <svg viewBox="0 0 20 20" fill="#F5B325" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg>
+          <svg viewBox="0 0 20 20" fill="#F5B325" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg>
+        </span>
+        <span class="score">4.9</span>
+        <span class="divider" aria-hidden="true"></span>
+        <span class="count">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.4a5.5 5.5 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.6-5.2 3.6-8.8z"></path><path fill="#34A853" d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3a7.2 7.2 0 0 1-10.7-3.8H1.3v3.1A12 12 0 0 0 12 24z"></path><path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6H1.3a12 12 0 0 0 0 10.8z"></path><path fill="#EA4335" d="M12 4.8c1.8 0 3.4.6 4.6 1.8l3.4-3.4A12 12 0 0 0 1.3 6.6l4 3.1A7.2 7.2 0 0 1 12 4.8z"></path></svg>
+          Over 100 five-star Google reviews
+        </span>
+      </div>
+      <!-- /REVIEWS -->
+    </div>
+  </section>
+
+  <!-- 2 · SYMPTOMS -->
+  <section data-depth="symptoms">
+    <div class="copy right reveal">
+      <p class="eyebrow"><span class="tick">●</span> Common Symptoms</p>
+      <h2>It never starts as an emergency.</h2>
+      <p class="lede">It starts small — a dull ache you can almost ignore. Sensitivity to cold. A crack you can't see. By the time it hurts, the problem is already deeper than the surface. We treat all of it, same day:</p>
+      <div class="symptom-grid">
+        <div class="symptom"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Severe or sudden toothache</div>
+        <div class="symptom"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Facial or gum swelling</div>
+        <div class="symptom"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Chipped, cracked, or broken tooth</div>
+        <div class="symptom"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Knocked-out or loose tooth</div>
+        <div class="symptom"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Lost filling, crown, or bonding</div>
+        <div class="symptom"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Wisdom tooth pain</div>
+        <div class="symptom"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Abscess or oral infection</div>
+        <div class="symptom"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Emergency extractions & root canals</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · THE NERVE -->
+  <section data-depth="nerve">
+    <div class="copy reveal">
+      <p class="eyebrow"><span class="tick">●</span> Why It Hurts</p>
+      <h2>Pain doesn't wait for a good time.</h2>
+      <p class="lede">A cracked tooth, a lost filling, an ache that won't quit. Small problems rarely stay small. Painkillers buy you a few hours. They don't fix what's underneath.</p>
+      <p class="lede">Same-day care finds the actual cause and treats it, so you're not stuck guessing until Monday.</p>
+    </div>
+  </section>
+
+  <!-- 4 · THE INFECTION -->
+  <section data-depth="infection">
+    <div class="copy right reveal">
+      <p class="eyebrow" style="color:var(--red-bright)"><span class="tick" style="color:var(--red-bright)">●</span> Don't Wait</p>
+      <h2>The longer it waits, the <span class="danger">more it costs.</span></h2>
+      <p class="lede">Swelling, spreading pain, or a fever aren't things to sleep on. Left alone, a small issue can turn into a much bigger, more expensive one.</p>
+      <p class="lede">That's exactly what we're built for: emergency dentists and oral surgeons on site.</p>
+      <div class="cta-row">
+        <a class="btn btn-call" href="tel:5165007400" data-track="call" data-loc="infection">Something feel urgent? Call now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · WHY US -->
+  <section data-depth="relief">
+    <div class="copy reveal">
+      <p class="eyebrow"><span class="tick">●</span> Why Choose Us</p>
+      <h2>From "get me out of pain" to <span class="accent">done, in one visit.</span></h2>
+      <p class="lede">Diagnosis, X-rays, and treatment under one roof. The nation's first urgent care dental clinic.</p>
+      <div class="why-grid">
+        <div class="why-card"><p class="big">All-in</p><p class="small">Exam plus all X-ray images: panoramic scan and 3D CBCT scan</p></div>
+        <div class="why-card"><p class="big">60 min</p><p class="small">Most patients seen within the hour</p></div>
+        <div class="why-card"><p class="big">On-site</p><p class="small">Oral surgeons & dental lab on site</p></div>
+        <div class="why-card"><p class="big">7 days</p><p class="small">Early morning to late evening hours.</p></div>
+      </div>
+      <div class="benefits">
+        <span class="benefit"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>No Appointment Needed</span>
+        <span class="benefit"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Walk-Ins Accepted</span>
+        <span class="benefit"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>0% Financing Available</span>
+        <span class="benefit"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>On-Site Dental Lab</span>
+        <span class="benefit"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Oral Surgeons On-Site</span>
+        <span class="benefit"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Same-Day Treatment</span>
+      </div>
+    </div>
+    <div class="partners">
+      <div class="fin-intro">
+        <p class="eyebrow"><span class="tick">●</span> Flexible Payment</p>
+        <h2>Cost won't keep you in pain.</h2>
+        <p>We offer 0% financing for every credit type, so an emergency never has to wait on your wallet.</p>
+      </div>
+      <p class="plabel">Financing partners we accept</p>
+      <div class="marquee">
+        <div class="marquee-track">
+          <span class="partner-chip"><img loading="lazy" src="assets/logo-carecredit.png" alt="CareCredit"></span>
+          <span class="partner-chip"><img loading="lazy" src="assets/logo-cherry.png" alt="Cherry"></span>
+          <span class="partner-chip"><img loading="lazy" src="assets/logo-sunbit.png" alt="Sunbit"></span>
+          <span class="partner-chip"><img loading="lazy" src="assets/logo-patientfi.png" alt="PatientFi"></span>
+          <span class="partner-chip" aria-hidden="true"><img loading="lazy" src="assets/logo-carecredit.png" alt=""></span>
+          <span class="partner-chip" aria-hidden="true"><img loading="lazy" src="assets/logo-cherry.png" alt=""></span>
+          <span class="partner-chip" aria-hidden="true"><img loading="lazy" src="assets/logo-sunbit.png" alt=""></span>
+          <span class="partner-chip" aria-hidden="true"><img loading="lazy" src="assets/logo-patientfi.png" alt=""></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · WHAT TO EXPECT -->
+  <section data-depth="what_to_expect">
+    <div class="copy reveal" style="max-width:1080px">
+      <p class="eyebrow"><span class="tick">●</span> What to Expect</p>
+      <h2>Three steps, <span class="accent">start to relief.</span></h2>
+      <div class="steps">
+        <div class="step">
+          <span class="n">Step 01</span>
+          <h3>Call or book online</h3>
+          <p>Tell us what hurts. We'll let you know when to come in, often right away.</p>
+        </div>
+        <div class="step">
+          <span class="n">Step 02</span>
+          <h3>Get evaluated</h3>
+          <p>Most patients are seen within 60 minutes. Your exam, panoramic scan, and 3D CBCT scan all happen on site.</p>
+        </div>
+        <div class="step">
+          <span class="n">Step 03</span>
+          <h3>Leave with a plan</h3>
+          <p>You'll know what's wrong, what it takes to fix it, and you'll leave out of pain.</p>
+        </div>
+      </div>
+      <div class="cta-row" style="margin-top:14px">
+        <a class="btn btn-call" href="tel:5165007400" data-track="call" data-loc="what_to_expect">Call (516) 500-7400</a>
+        <button class="btn btn-ghost" data-track="book" data-loc="what_to_expect">Book online</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · VISIT US -->
+  <section data-depth="visit">
+    <div class="copy reveal" style="max-width:1080px">
+      <p class="eyebrow"><span class="tick">●</span> Visit Us</p>
+      <h2>Right off Exit 33 on the L.I.E.</h2>
+      <p class="lede">Free parking on site. If you're in pain now, call on your way and we'll have a room ready.</p>
+      <div class="visit-grid">
+        <div class="map-frame">
+          <iframe title="Map to Smile Services of New York, 444 Community Drive Suite 309, Manhasset NY" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=444%20Community%20Drive%20Suite%20309%2C%20Manhasset%2C%20NY%2011030&z=15&output=embed"></iframe>
+        </div>
+        <div class="visit-facts">
+          <div class="fact-card">
+            <span class="k">Address</span>
+            <address>444 Community Drive, Suite 309<br>Manhasset, NY 11030</address>
+            <p class="sub">Exit 33, Long Island Expressway · Free on-site parking</p>
+            <a class="map-cta" href="https://www.google.com/maps/dir//smile+services+of+new+york/@40.7736343,-73.7432809,13z" target="_blank" rel="noopener" data-track="directions">Get directions</a>
+          </div>
+          <div class="fact-card">
+            <span class="k">Hours</span>
+            <div class="hours-list">
+              <div><span>Saturday</span><span>6:30am – 10pm</span></div>
+              <div><span>Sunday</span><span>6:30am – 10pm</span></div>
+              <div><span>Monday</span><span>6:30am – 5pm</span></div>
+              <div><span>Tuesday</span><span>By Appointment Only</span></div>
+              <div><span>Wednesday</span><span>By Appointment Only</span></div>
+              <div><span>Thursday</span><span>By Appointment Only</span></div>
+              <div><span>Friday</span><span>6:30am – 10pm</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · FINAL CTA -->
+  <section class="final" data-depth="final_cta">
+    <div class="copy reveal">
+      <h2>No matter the day,<br><span class="accent">relief is on its way.</span></h2>
+      <p class="lede" style="margin-left:auto;margin-right:auto">Don't wait for the pain to look like this. Call now or book online, and we'll take it from here.</p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn btn-call" href="tel:5165007400" data-track="call" data-loc="final">Call (516) 500-7400</a>
+        <button class="btn btn-ghost" data-track="book" data-loc="final">Book online</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="brand-strip" aria-label="Our family of practices">
+  <img src="assets/logo-urgentcare.png" alt="Urgent Care Dental">
+  <img src="assets/logo-tooth.png" alt="Smile Services of New York">
+  <img src="assets/logo-extraction.png" alt="The Extraction Center">
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="assets/logo-urgentcare.png" alt="Urgent Care Dental" onerror="this.style.display='none'">
+      <p class="fname">Smile Services of New York</p>
+      <p class="fsub"><span class="u1">Urgent Care</span> <span class="u2">Dental</span></p>
+      <p>Walk-in dental emergency care in Manhasset, no appointment necessary. All dental emergencies treated.</p>
+    </div>
+    <div class="fcol">
+      <span class="fh">Location</span>
+      <span class="fline fstrong">Smile Services of New York, Urgent Care Dental</span>
+      <address>444 Community Drive, Suite 309<br>Manhasset, NY 11030</address>
+      <span class="fline"><a href="tel:5165007400" data-track="call" data-loc="footer">(516) 500-7400</a></span>
+      <span class="fline"><a href="https://www.google.com/maps/dir//smile+services+of+new+york/@40.7736343,-73.7432809,13z" target="_blank" rel="noopener" data-track="directions">Get directions →</a></span>
+    </div>
+    <div class="fcol">
+      <span class="fh">Hours</span>
+      <div class="fhours">
+        <div><span>Friday to Sunday</span><span>6:30am – 10pm</span></div>
+        <div><span>Monday</span><span>6:30am – 5pm</span></div>
+        <div><span>Tuesday to Thursday</span><span>By appointment</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-base">
+    <p class="copyright">© 2026 Smile Services of New York · Urgent Care Dental.</p>
+    <p class="disclaimer">Same-day care depends on how busy the clinic is when you arrive, and the most urgent cases are treated first. Financing terms depend on approval by the lender, and not every plan is offered to every applicant. If you are having trouble breathing, bleeding heavily, or facing any life-threatening condition, call 911 or head to the nearest emergency room instead.</p>
+  </div>
+</footer>
+
+<div class="callbar"><a href="tel:5165007400" data-track="call" data-loc="sticky_bar">📞 Tap to call, get seen today</a></div>
+
+<!-- ---------- Jarvis booking modal ---------- -->
+<div class="modal-overlay" id="booking-modal" role="dialog" aria-modal="true" aria-label="Book an appointment">
+  <div class="modal-shell">
+    <div class="modal-head">
+      <span class="mtitle">Book your visit</span>
+      <button class="modal-close" id="modal-close" aria-label="Close booking window">✕</button>
+    </div>
+    <iframe id="jarvis-frame" title="Online appointment booking" loading="lazy"
+      data-src="https://schedule.jarvisanalytics.com/frame?eoid=14250&elid=14000000000373"></iframe>
+    <div class="modal-fallback">
+      Having trouble? <a href="https://schedule.jarvisanalytics.com/frame?eoid=14250&elid=14000000000373" target="_blank" rel="noopener" id="fallback-link">Open booking in a new tab</a>
+      &nbsp;·&nbsp; or call <a href="tel:5165007400" data-track="call" data-loc="modal">(516) 500-7400</a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  window.dataLayer = window.dataLayer || [];
+  function track(event, params){
+    dataLayer.push(Object.assign({event: event}, params || {}));
+  }
+
+  /* ---------- cinematic scroll background ---------- */
+  const pano = document.getElementById('pano-bg');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function onScroll(){
+    if (reduced) return;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+
+    let scale = 1 + p * 2.2;
+    let translateX = p * -8;
+    let translateY = p * 4;
+
+    let hueRotate = 185;
+    let contrast = 145;
+    if (p > 0.48 && p < 0.78){
+      hueRotate = 330;
+      contrast = 175;
+    } else if (p >= 0.78){
+      hueRotate = 200;
+    }
+
+    pano.style.transform = `scale(${scale}) translate(${translateX}%, ${translateY}%)`;
+    pano.style.filter = `contrast(${contrast}%) brightness(88%) hue-rotate(${hueRotate}deg)`;
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ---------- section reveals + scroll-depth events ---------- */
+  if (!('IntersectionObserver' in window)){
+    document.documentElement.classList.add('no-io');
+  }
+  const seenDepths = new Set();
+  const io = ('IntersectionObserver' in window) ? new IntersectionObserver((entries) => {
+    for (const e of entries){
+      if (!e.isIntersecting) continue;
+      const el = e.target;
+      if (el.classList.contains('reveal')) el.classList.add('in');
+      const sec = el.closest('section');
+      if (sec && sec.dataset.depth && !seenDepths.has(sec.dataset.depth)){
+        seenDepths.add(sec.dataset.depth);
+        track('scroll_section', {section_name: sec.dataset.depth});
+      }
+    }
+  }, {threshold: 0.25}) : null;
+  if (io){
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  }
+
+  /* fail-open: never leave content hidden if the observer never fires */
+  function revealAll(){
+    document.querySelectorAll('.reveal:not(.in)').forEach(el => el.classList.add('in'));
+  }
+  window.addEventListener('load', function(){ setTimeout(revealAll, 1200); });
+  setTimeout(revealAll, 2500);
+
+  /* ---------- call + link click tracking ---------- */
+  document.addEventListener('click', function(e){
+    const el = e.target.closest('[data-track]');
+    if (!el) return;
+    const kind = el.dataset.track;
+    if (kind === 'call'){
+      track('call_click', {location: el.dataset.loc || 'unknown', click_location: el.dataset.loc || 'unknown'});
+    } else if (kind === 'directions'){
+      track('directions_click', {});
+    } else if (kind === 'financing'){
+      track('financing_click', {});
+    } else if (kind === 'book'){
+      track('booking_intent', {location: el.dataset.loc || 'unknown'});
+      openModal(el.dataset.loc || 'unknown');
+    }
+  });
+
+  /* ---------- booking modal ---------- */
+  const modal = document.getElementById('booking-modal');
+  const frame = document.getElementById('jarvis-frame');
+  const closeBtn = document.getElementById('modal-close');
+  const fallbackLink = document.getElementById('fallback-link');
+  let frameLoaded = false;
+
+  function openModal(loc){
+    if (!frameLoaded){
+      frame.src = frame.dataset.src;   // lazy-load Jarvis only when needed
+      frameLoaded = true;
+    }
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    track('booking_opened', {click_location: loc});
+  }
+  function closeModal(){
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    track('booking_closed', {});
+  }
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e){ if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+  });
+  fallbackLink.addEventListener('click', function(){
+    track('booking_newtab_fallback', {});
+  });
+
+  /* ---------- Jarvis postMessage diagnostic ----------
+     Console-only diagnostic. Booking completion happens in a cross-origin
+     iframe and cannot be reliably detected here, so no conversion event is
+     fired from this page. Intent events only. */
+  window.addEventListener('message', function(e){
+    if (!e.origin || e.origin.indexOf('jarvisanalytics.com') === -1) return;
+    try {
+      console.log('[Jarvis postMessage diagnostic]', e.origin, e.data);
+    } catch (err){ /* never let diagnostics break the page */ }
+  });
+})();
+</script>
+</body>
+</html>
