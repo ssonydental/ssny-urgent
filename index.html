@@ -24,12 +24,7 @@ gtag('consent', 'default', {
   analytics_storage: 'granted'
 });
 </script>
-<!-- Google Ads (AW) base tag -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-10865153869"></script>
-<script>
-  gtag('js', new Date());
-  gtag('config', 'AW-10865153869');
-</script>
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -259,6 +254,13 @@ h2{font-size:clamp(1.9rem,4vw,2.9rem);margin-bottom:18px}
 .btn-ghost:hover{border-color:var(--lavender);transform:translateY(-2px)}
 .hero-note{margin-top:26px;font-size:.85rem;color:var(--ink-faint)}
 .hero-note strong{color:var(--pearl)}
+.hero-address{
+  display:flex;align-items:flex-start;gap:9px;margin:-6px 0 26px;font-style:normal;
+  font-family:'Inter',sans-serif;font-size:1rem;line-height:1.5;color:var(--ink-soft);flex-wrap:wrap;
+}
+.hero-address svg{width:16px;height:16px;flex:0 0 auto;margin-top:4px;fill:var(--lavender)}
+.hero-address .addr-city{color:var(--pearl);font-weight:600}
+@media (max-width:560px){.hero-address{font-size:.92rem;gap:7px;margin-bottom:22px}}
 
 .reveal{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .7s ease}
 html.no-io .reveal{opacity:1;transform:none;transition:none}
@@ -410,6 +412,106 @@ html.no-io .reveal{opacity:1;transform:none;transition:none}
 .partner-chip img{height:100%;width:auto;max-width:290px;object-fit:contain;display:block}
 @keyframes partners-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.marquee-track{animation:none}}
+
+/* ---------- what we treat: coverflow ---------- */
+.cf-wrap{margin-top:26px;width:100%}
+.cf-stage{
+  position:relative;height:430px;perspective:1500px;perspective-origin:50% 45%;
+  touch-action:pan-y;user-select:none;outline:none;
+}
+.cf-stage:focus-visible{outline:2px solid var(--aqua);outline-offset:6px;border-radius:20px}
+.cf-track{position:absolute;inset:0;transform-style:preserve-3d}
+.cf-slide{
+  position:absolute;top:0;left:50%;width:360px;height:404px;margin-left:-180px;
+  transform-style:preserve-3d;will-change:transform,opacity;
+  transition:transform .55s cubic-bezier(.22,.75,.2,1),opacity .55s ease;
+  cursor:pointer;
+}
+.cf-card{
+  height:100%;display:flex;flex-direction:column;gap:14px;text-align:left;
+  padding:28px 26px;border-radius:16px;
+  background:rgba(191,233,255,.05);
+  border:1px solid rgba(191,233,255,.14);
+  backdrop-filter:blur(2px);
+  transition:border-color .45s ease,background .45s ease,box-shadow .45s ease;
+}
+.cf-slide[data-active="true"] .cf-card{
+  background:rgba(191,233,255,.08);
+  border-color:rgba(200,184,232,.34);
+  box-shadow:0 16px 44px rgba(2,8,18,.34);
+}
+.cf-slide[data-active="true"]{cursor:default}
+.cf-icon{width:34px;height:34px;flex:0 0 auto;stroke:var(--lavender);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.cf-slide[data-urgent="true"] .cf-icon{stroke:var(--red-bright)}
+.cf-card h3{
+  font-family:'Playfair Display',serif;font-weight:600;font-size:1.62rem;line-height:1.18;
+  color:var(--pearl);margin:0;
+}
+.cf-card p{font-family:'Inter',sans-serif;font-size:.95rem;line-height:1.6;color:var(--ink-soft);margin:0}
+.cf-note{
+  font-family:'Inter',sans-serif;font-size:.82rem;line-height:1.55;color:var(--ink-faint);
+  padding-top:14px;border-top:1px solid rgba(191,233,255,.12);margin-top:auto;
+}
+.cf-tag{
+  align-self:flex-start;font-family:'Inter',sans-serif;font-weight:700;font-size:.68rem;
+  letter-spacing:.16em;text-transform:uppercase;padding:7px 13px;border-radius:100px;
+  color:var(--lavender);background:rgba(200,184,232,.1);border:1px solid rgba(200,184,232,.32);
+}
+.cf-slide[data-urgent="true"] .cf-tag{
+  color:#FFD9DF;background:rgba(200,16,46,.22);border-color:rgba(227,24,55,.6);
+}
+.cf-controls{display:flex;align-items:center;justify-content:flex-start;gap:18px;margin-top:30px;flex-wrap:wrap}
+.cf-arrow{
+  width:46px;height:46px;flex:0 0 auto;border-radius:50%;cursor:pointer;
+  background:rgba(191,233,255,.05);border:1px solid rgba(247,244,236,.28);color:var(--pearl);
+  display:flex;align-items:center;justify-content:center;transition:border-color .2s,background .2s,transform .2s;
+}
+.cf-arrow:hover{border-color:var(--lavender);background:rgba(200,184,232,.14);transform:translateY(-2px)}
+.cf-arrow:focus-visible{outline:2px solid var(--aqua);outline-offset:3px}
+.cf-arrow svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cf-dots{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:center}
+.cf-dot{
+  width:8px;height:8px;padding:0;border-radius:50%;cursor:pointer;border:0;
+  background:rgba(247,244,236,.25);transition:background .25s,transform .25s;
+}
+.cf-dot:hover{background:rgba(247,244,236,.5)}
+.cf-dot[aria-current="true"]{background:var(--red-bright);transform:scale(1.5)}
+.cf-dot:focus-visible{outline:2px solid var(--aqua);outline-offset:3px}
+.cf-counter{
+  font-family:'IBM Plex Mono',monospace;font-size:.74rem;letter-spacing:.14em;color:var(--ink-faint);
+  min-width:72px;text-align:center;
+}
+.cf-counter .cf-now{color:var(--pearl)}
+.cf-hint{
+  margin-top:14px;font-family:'Inter',sans-serif;font-size:.78rem;color:var(--ink-faint);
+}
+@media (max-width:760px){
+  .cf-controls{justify-content:center}
+  .cf-hint{text-align:center}
+  .cf-stage{height:400px;perspective:1000px}
+  .cf-slide{width:76vw;max-width:330px;height:380px;margin-left:-38vw}
+  .cf-card{padding:24px 22px;gap:12px}
+  .cf-card h3{font-size:1.4rem}
+  .cf-controls{gap:12px;margin-top:26px}
+}
+@media (prefers-reduced-motion:reduce){.cf-slide{transition:none}}
+
+/* ---------- call CTA glow ---------- */
+@keyframes ssony-call-glow{
+  0%,100%{box-shadow:0 0 0 0 rgba(200,16,46,0),0 0 14px 1px rgba(200,16,46,.28)}
+  50%{box-shadow:0 0 0 4px rgba(227,24,55,.12),0 0 30px 6px rgba(227,24,55,.5)}
+}
+.call-pill,.btn-call,.callbar{
+  animation:ssony-call-glow 2.8s ease-in-out infinite;
+  will-change:box-shadow;
+}
+.callbar{animation-duration:3s}
+@media (prefers-reduced-motion:reduce){
+  .call-pill,.btn-call,.callbar{
+    animation:none;
+    box-shadow:0 0 18px 3px rgba(200,16,46,.32);
+  }
+}
 
 section[data-depth="relief"]{padding-bottom:40px}
 .final{text-align:center;align-items:center;padding-top:40px}
@@ -563,6 +665,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="copy reveal">
       <p class="price-badge">Same-day emergency appointments available</p>
       <h1>We see what's <span class="accent">causing the pain.</span></h1>
+      <address class="hero-address">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 6.2 12.3 6.5 12.6.3.3.8.3 1 0C12.8 21.3 19 14.2 19 9c0-3.9-3.1-7-7-7zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2z"></path></svg>
+        <span>444 Community Drive, Suite 309 &middot; <span class="addr-city">Manhasset, NY 11030</span></span>
+      </address>
       <p class="lede">One visit covers your exam and all X-ray images, including a panoramic scan and a 3D CBCT scan, with no surprise fees. Most patients seen within 60 minutes, right off Exit 33 on the L.I.E.</p>
       <div class="cta-row">
         <a class="btn btn-call" href="tel:5165007400" data-track="call" data-loc="hero">Call now to get seen today</a>
@@ -589,21 +695,123 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- 2 · SYMPTOMS -->
+  <!-- 2 · SYMPTOMS + WHAT WE TREAT -->
   <section data-depth="symptoms">
-    <div class="copy right reveal">
+    <div class="copy reveal" style="max-width:1120px">
       <p class="eyebrow"><span class="tick">●</span> Common Symptoms</p>
       <h2>It never starts as an emergency.</h2>
       <p class="lede">It starts small — a dull ache you can almost ignore. Sensitivity to cold. A crack you can't see. By the time it hurts, the problem is already deeper than the surface. We treat all of it, same day:</p>
-      <div class="symptom-grid">
-        <div class="symptom"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Severe or sudden toothache</div>
-        <div class="symptom"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Facial or gum swelling</div>
-        <div class="symptom"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Chipped, cracked, or broken tooth</div>
-        <div class="symptom"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Knocked-out or loose tooth</div>
-        <div class="symptom"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Lost filling, crown, or bonding</div>
-        <div class="symptom"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Wisdom tooth pain</div>
-        <div class="symptom"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Abscess or oral infection</div>
-        <div class="symptom"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Emergency extractions & root canals</div>
+      <div class="cf-wrap">
+        <div class="cf-stage" id="cf-stage" tabindex="0" role="region" aria-label="Emergency conditions we treat, carousel">
+          <div class="cf-track">
+      <article class="cf-slide" data-urgent="true" data-i="0" role="group" aria-roledescription="slide" aria-label="1 of 11: Severe Toothache">
+        <div class="cf-card">
+          <svg class="cf-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 3c3.3 0 5 2.4 5 5.6 0 3.6-1.4 5-2 8.2-.5 2.8-.7 5.2-2.2 5.2-1.4 0-1.6-2.4-2.8-2.4s-1.4 2.4-2.8 2.4c-1.5 0-1.7-2.4-2.2-5.2C7.4 13.6 6 12.2 6 8.6 6 5.4 7.7 3 11 3c1.6 0 2 .8 3 .8s1.4-.8 3-.8z" transform="translate(-2,0)"/></svg>
+          <h3>Severe Toothache</h3>
+          <p>A deep, throbbing ache that keeps you up at night usually means the nerve is involved.</p>
+          <p class="cf-note">Most patients are seen within 60 minutes of calling.</p>
+          <span class="cf-tag">Seen within the hour</span>
+        </div>
+      </article>
+      <article class="cf-slide" data-i="1" role="group" aria-roledescription="slide" aria-label="2 of 11: Broken or Chipped Tooth">
+        <div class="cf-card">
+          <svg class="cf-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5l7 7-4 3 6 8"/><path d="M20 5l-6 6"/></svg>
+          <h3>Broken or Chipped Tooth</h3>
+          <p>A cracked or broken tooth exposes the inner layers and gets worse with every bite.</p>
+          <p class="cf-note">Every visit includes on-site panoramic and 3D CBCT imaging, with no surprise fees.</p>
+          <span class="cf-tag">Same-day repair</span>
+        </div>
+      </article>
+      <article class="cf-slide" data-urgent="true" data-i="2" role="group" aria-roledescription="slide" aria-label="3 of 11: Knocked-Out Tooth">
+        <div class="cf-card">
+          <svg class="cf-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v10"/><path d="M8 14l4 6 4-6"/><circle cx="12" cy="4" r="1.4"/></svg>
+          <h3>Knocked-Out Tooth</h3>
+          <p>A tooth that has been fully knocked out can often be saved if you get here fast.</p>
+          <p class="cf-note">A board-certified oral surgeon is on staff for surgical emergencies.</p>
+          <span class="cf-tag">Act within 1 hour</span>
+        </div>
+      </article>
+      <article class="cf-slide" data-urgent="true" data-i="3" role="group" aria-roledescription="slide" aria-label="4 of 11: Loose or Displaced Tooth">
+        <div class="cf-card">
+          <svg class="cf-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8l12-3"/><path d="M7 13l11-2"/><path d="M9 19l8-3"/></svg>
+          <h3>Loose or Displaced Tooth</h3>
+          <p>A tooth pushed out of position or moving in its socket needs to be stabilized quickly.</p>
+          
+          <span class="cf-tag">Immediate stabilization</span>
+        </div>
+      </article>
+      <article class="cf-slide" data-i="4" role="group" aria-roledescription="slide" aria-label="5 of 11: Lost Filling or Crown">
+        <div class="cf-card">
+          <svg class="cf-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9a7 7 0 0114 0v4a7 7 0 01-14 0z"/><path d="M9 9h6v5H9z" stroke-dasharray="2 2"/></svg>
+          <h3>Lost Filling or Crown</h3>
+          <p>An open tooth where a filling or crown used to be is exposed to bacteria and pressure.</p>
+          <p class="cf-note">Our dental lab is on site, so most restorations are handled in the same visit.</p>
+          <span class="cf-tag">Same-day restoration</span>
+        </div>
+      </article>
+      <article class="cf-slide" data-urgent="true" data-i="5" role="group" aria-roledescription="slide" aria-label="6 of 11: Swelling & Facial Abscess">
+        <div class="cf-card">
+          <svg class="cf-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7"/><path d="M12 8v4"/><path d="M12 15.6h.01"/></svg>
+          <h3>Swelling & Facial Abscess</h3>
+          <p>Facial swelling means infection is spreading beyond the tooth. This one cannot wait.</p>
+          <p class="cf-note">On-site 3D CBCT imaging shows us exactly how far the infection has spread.</p>
+          <span class="cf-tag">Emergency priority</span>
+        </div>
+      </article>
+      <article class="cf-slide" data-urgent="true" data-i="6" role="group" aria-roledescription="slide" aria-label="7 of 11: Dental Infection">
+        <div class="cf-card">
+          <svg class="cf-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c4 3 6 6 6 9.5A6 6 0 016 12.5C6 9 8 6 12 3z"/><path d="M12 12v4"/></svg>
+          <h3>Dental Infection</h3>
+          <p>Pressure, bad taste, or a pimple on the gum are all signs of an active infection.</p>
+          
+          <span class="cf-tag">Same-day relief</span>
+        </div>
+      </article>
+      <article class="cf-slide" data-i="7" role="group" aria-roledescription="slide" aria-label="8 of 11: Dental Implant Emergency">
+        <div class="cf-card">
+          <svg class="cf-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2 4h-4z"/><path d="M12 7v9"/><path d="M9.5 10h5"/><path d="M9.8 13h4.4"/><path d="M12 16l1.5 5h-3z"/></svg>
+          <h3>Dental Implant Emergency</h3>
+          <p>A loose, painful, or failing implant needs a surgical eye on it, not a wait list.</p>
+          <p class="cf-note">Implant and surgical emergencies are handled on site by a board-certified oral surgeon.</p>
+          <span class="cf-tag">Oral surgeon on staff</span>
+        </div>
+      </article>
+      <article class="cf-slide" data-i="8" role="group" aria-roledescription="slide" aria-label="9 of 11: Extreme Sensitivity">
+        <div class="cf-card">
+          <svg class="cf-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5c-4 0-6 2.5-6 6 0 4 2.5 8 6 8s6-4 6-8c0-3.5-2-6-6-6z"/><path d="M3 8l3 1"/><path d="M21 8l-3 1"/></svg>
+          <h3>Extreme Sensitivity</h3>
+          <p>Sharp pain from cold, heat, or air points to exposed dentin or a hidden crack.</p>
+          <p class="cf-note">Panoramic and 3D CBCT scans are included, so we find the cause on the first visit.</p>
+          <span class="cf-tag">Diagnosis & relief</span>
+        </div>
+      </article>
+      <article class="cf-slide" data-i="9" role="group" aria-roledescription="slide" aria-label="10 of 11: Wisdom Tooth Pain">
+        <div class="cf-card">
+          <svg class="cf-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15c0-5 3.6-9 8-9s8 4 8 9"/><path d="M8 15c0-3 1.8-5 4-5s4 2 4 5"/><path d="M4 19h16"/></svg>
+          <h3>Wisdom Tooth Pain</h3>
+          <p>Pressure at the back of the jaw, swelling, or trouble opening your mouth.</p>
+          <p class="cf-note">Evaluated and, when needed, treated by our on-staff oral surgeon the same day.</p>
+          <span class="cf-tag">Surgical evaluation same day</span>
+        </div>
+      </article>
+      <article class="cf-slide" data-i="10" role="group" aria-roledescription="slide" aria-label="11 of 11: Any Other Emergency">
+        <div class="cf-card">
+          <svg class="cf-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M9.6 9.4a2.5 2.5 0 114.1 2.1c-1 .8-1.7 1.3-1.7 2.5"/><path d="M12 17h.01"/></svg>
+          <h3>Any Other Emergency</h3>
+          <p>Not sure what is wrong? You do not need a diagnosis to be seen.</p>
+          <p class="cf-note">Walk-ins accepted during staffed hours. Exam and all imaging included.</p>
+          <span class="cf-tag">If it hurts, walk in — we'll take a look</span>
+        </div>
+      </article>
+          </div>
+        </div>
+        <div class="cf-controls">
+          <button class="cf-arrow" type="button" id="cf-prev" aria-label="Previous condition"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></button>
+          <div class="cf-dots" id="cf-dots"><button class="cf-dot" type="button" data-i="0" aria-label="Show Severe Toothache" aria-current="true"></button><button class="cf-dot" type="button" data-i="1" aria-label="Show Broken or Chipped Tooth"></button><button class="cf-dot" type="button" data-i="2" aria-label="Show Knocked-Out Tooth"></button><button class="cf-dot" type="button" data-i="3" aria-label="Show Loose or Displaced Tooth"></button><button class="cf-dot" type="button" data-i="4" aria-label="Show Lost Filling or Crown"></button><button class="cf-dot" type="button" data-i="5" aria-label="Show Swelling & Facial Abscess"></button><button class="cf-dot" type="button" data-i="6" aria-label="Show Dental Infection"></button><button class="cf-dot" type="button" data-i="7" aria-label="Show Dental Implant Emergency"></button><button class="cf-dot" type="button" data-i="8" aria-label="Show Extreme Sensitivity"></button><button class="cf-dot" type="button" data-i="9" aria-label="Show Wisdom Tooth Pain"></button><button class="cf-dot" type="button" data-i="10" aria-label="Show Any Other Emergency"></button></div>
+          <span class="cf-counter" aria-live="polite"><span class="cf-now" id="cf-now">01</span> / 11</span>
+          <button class="cf-arrow" type="button" id="cf-next" aria-label="Next condition"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg></button>
+        </div>
+        <p class="cf-hint">Swipe, click a card, or use your arrow keys.</p>
       </div>
     </div>
   </section>
@@ -963,6 +1171,80 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       console.log('[Jarvis postMessage diagnostic]', e.origin, e.data);
     } catch (err){ /* never let diagnostics break the page */ }
   });
+})();
+</script>
+<template id="__bundler_thumbnail" data-bg-color="#0B1D3A">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="600" cy="330" r="150" fill="#C8102E"/>
+    <text x="600" y="380" text-anchor="middle" font-family="Georgia,serif" font-size="150" fill="#F7F4EC">SS</text>
+    <text x="600" y="560" text-anchor="middle" font-family="Georgia,serif" font-size="72" fill="#C8B8E8">Urgent Care Dental</text>
+  </svg>
+</template>
+<script>
+(function(){
+  var stage = document.getElementById('cf-stage');
+  if (!stage) return;
+  var slides = [].slice.call(stage.querySelectorAll('.cf-slide'));
+  var dots = [].slice.call(document.querySelectorAll('#cf-dots .cf-dot'));
+  var now = document.getElementById('cf-now');
+  var idx = 0;
+
+  function layout(){
+    var w = slides[0].offsetWidth || 360;
+    var narrow = window.innerWidth <= 760;
+    var step = w * (narrow ? 0.5 : 0.62);
+    var rot = narrow ? 30 : 40;
+    var visible = narrow ? 2 : 3;
+    slides.forEach(function(s, i){
+      var off = i - idx, abs = Math.abs(off), sign = off < 0 ? -1 : 1;
+      var scale = Math.max(0.62, 1 - abs * 0.1);
+      var z = -abs * (narrow ? 90 : 130);
+      s.style.transform = 'translateX(' + (off * step) + 'px) translateZ(' + z + 'px) rotateY(' + (-sign * Math.min(abs,1) * rot - (abs>1 ? sign*6*(abs-1) : 0)) + 'deg) scale(' + scale + ')';
+      s.style.opacity = abs === 0 ? 1 : abs === 1 ? 0.45 : abs === 2 ? 0.22 : abs <= visible ? 0.1 : 0;
+      s.style.zIndex = String(100 - abs);
+      s.style.pointerEvents = abs === 0 || abs > visible ? 'none' : 'auto';
+      s.setAttribute('data-active', abs === 0 ? 'true' : 'false');
+      s.setAttribute('aria-hidden', abs === 0 ? 'false' : 'true');
+    });
+    dots.forEach(function(d, i){
+      if (i === idx) d.setAttribute('aria-current','true'); else d.removeAttribute('aria-current');
+    });
+    if (now) now.textContent = String(idx + 1).padStart(2,'0');
+  }
+  function go(n){ idx = Math.max(0, Math.min(slides.length - 1, n)); layout(); }
+
+  document.getElementById('cf-prev').addEventListener('click', function(){ go(idx - 1); });
+  document.getElementById('cf-next').addEventListener('click', function(){ go(idx + 1); });
+  dots.forEach(function(d){ d.addEventListener('click', function(){ go(+d.dataset.i); }); });
+  slides.forEach(function(s){ s.addEventListener('click', function(){ if (+s.dataset.i !== idx) go(+s.dataset.i); }); });
+
+  stage.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowLeft'){ e.preventDefault(); go(idx - 1); }
+    else if (e.key === 'ArrowRight'){ e.preventDefault(); go(idx + 1); }
+  });
+
+  var x0 = null, y0 = null, locked = false;
+  stage.addEventListener('touchstart', function(e){
+    x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; locked = false;
+  }, {passive:true});
+  stage.addEventListener('touchmove', function(e){
+    if (x0 === null || locked) return;
+    var dx = e.touches[0].clientX - x0, dy = e.touches[0].clientY - y0;
+    if (Math.abs(dx) > 44 && Math.abs(dx) > Math.abs(dy)){
+      locked = true; go(idx + (dx < 0 ? 1 : -1)); x0 = null;
+    }
+  }, {passive:true});
+  stage.addEventListener('touchend', function(){ x0 = null; }, {passive:true});
+
+  var mx = null;
+  stage.addEventListener('mousedown', function(e){ mx = e.clientX; });
+  stage.addEventListener('mouseup', function(e){
+    if (mx !== null && Math.abs(e.clientX - mx) > 60) go(idx + (e.clientX < mx ? 1 : -1));
+    mx = null;
+  });
+
+  window.addEventListener('resize', layout);
+  layout();
 })();
 </script>
 </body>
