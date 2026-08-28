@@ -34,7 +34,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {
@@ -143,6 +143,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 </script>
 
+<link rel="preload" as="image" href="assets/logo-urgentcare.png">
 <style>
 :root{
   --navy:#0B1D3A;
@@ -157,7 +158,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   --ink-faint:rgba(247,244,236,.45);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden;max-width:100%}
 body{
   font-family:'Inter',sans-serif;
   background:radial-gradient(ellipse at 50% 0%,#0a1c36 0%,var(--bg) 60%);
@@ -195,7 +196,7 @@ main{position:relative;z-index:3}
   backdrop-filter:blur(6px);
 }
 .brand{display:flex;align-items:center;gap:12px}
-.brand-logo{height:46px;width:46px;display:block;flex-shrink:0;border-radius:50%;object-fit:cover}
+.brand-logo{height:46px;width:46px;display:block;flex-shrink:0;border-radius:50%;object-fit:cover;background-color:#0B1D3A;color:transparent;font-size:0}
 .wordmark{font-family:'Playfair Display',serif;font-weight:600;font-size:1.05rem;line-height:1.25}
 .wordmark span{color:var(--lavender)}
 .wordmark .subname{
@@ -236,10 +237,14 @@ section{
   letter-spacing:.05em;text-transform:uppercase;color:var(--xray);margin-bottom:16px;
 }
 h1,h2{font-family:'Playfair Display',serif;font-weight:600;line-height:1.12}
-h1{font-size:clamp(2.4rem,6vw,4.3rem);margin-bottom:22px}
+h1{font-size:clamp(2.8rem,6.8vw,5.1rem);font-weight:800;letter-spacing:-.015em;margin-bottom:12px}
+.hero-sub{
+  font-family:'Playfair Display',serif;font-weight:500;color:var(--xray);
+  font-size:clamp(1.4rem,3.2vw,2.5rem);line-height:1.2;margin-bottom:20px;
+}
 h2{font-size:clamp(1.9rem,4vw,2.9rem);margin-bottom:18px}
 .lede{font-size:clamp(1rem,1.6vw,1.18rem);color:var(--ink-soft);margin-bottom:30px;max-width:46ch}
-.accent{color:var(--lavender);font-style:italic}
+.accent{color:var(--lavender)}
 .danger{color:var(--red-bright)}
 
 .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
@@ -388,7 +393,7 @@ html.no-io .reveal{opacity:1;transform:none;transition:none}
 .rating-row .divider{width:1px;height:20px;background:rgba(191,233,255,.2)}
 
 /* ---------- financing partners marquee ---------- */
-.partners{margin-top:36px;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:44px 0 40px;border-top:1px solid rgba(191,233,255,.12)}
+.partners{margin-top:36px;width:calc(100vw - var(--sbw,0px));max-width:calc(100vw - var(--sbw,0px));position:relative;left:50%;right:50%;margin-left:calc(-50vw + var(--sbw,0px)/2);margin-right:calc(-50vw + var(--sbw,0px)/2);padding:44px 0 40px;border-top:1px solid rgba(191,233,255,.12)}
 .fin-intro{
   max-width:760px;margin:0 auto 34px;padding:0 clamp(20px,6vw,80px);text-align:center;
 }
@@ -486,6 +491,7 @@ html.no-io .reveal{opacity:1;transform:none;transition:none}
   margin-top:14px;font-family:'Inter',sans-serif;font-size:.78rem;color:var(--ink-faint);
 }
 @media (max-width:760px){
+  .cf-wrap{overflow-x:clip;overflow-y:visible}
   .cf-controls{justify-content:center}
   .cf-hint{text-align:center}
   .cf-stage{height:400px;perspective:1000px}
@@ -649,7 +655,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header class="topbar">
   <div class="brand">
-    <img class="brand-logo" src="assets/logo-urgentcare.png" alt="Urgent Care Dental logo" onerror="this.style.display='none'">
+    <img class="brand-logo" src="assets/logo-urgentcare.png" alt="Urgent Care Dental logo" width="46" height="46" fetchpriority="high" loading="eager" decoding="sync" onerror="this.style.display='none'">
     <div class="wordmark">Smile Services <span>of New York</span><span class="subname"><span class="u1">Urgent Care</span> <span class="u2">Dental</span></span></div>
   </div>
   <div class="topbar-actions">
@@ -664,7 +670,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section data-depth="hero">
     <div class="copy reveal">
       <p class="price-badge">Same-day emergency appointments available</p>
-      <h1>We see what's <span class="accent">causing the pain.</span></h1>
+      <h1>We see what's causing the <span style="color:var(--lavender)">pain.</span></h1>
+      <p class="hero-sub">And we treat it the same day.</p>
       <address class="hero-address">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 6.2 12.3 6.5 12.6.3.3.8.3 1 0C12.8 21.3 19 14.2 19 9c0-3.9-3.1-7-7-7zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2z"></path></svg>
         <span>444 Community Drive, Suite 309 &middot; <span class="addr-city">Manhasset, NY 11030</span></span>
@@ -1006,7 +1013,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <img src="assets/logo-urgentcare.png" alt="Urgent Care Dental" onerror="this.style.display='none'">
+      <img src="assets/logo-urgentcare.png" alt="Urgent Care Dental" loading="eager" decoding="async" onerror="this.style.display='none'">
       <p class="fname">Smile Services of New York</p>
       <p class="fsub"><span class="u1">Urgent Care</span> <span class="u2">Dental</span></p>
       <p>Walk-in dental emergency care in Manhasset, no appointment necessary. All dental emergencies treated.</p>
@@ -1182,6 +1189,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </template>
 <script>
 (function(){
+  function sbw(){
+    var w = window.innerWidth - document.documentElement.clientWidth;
+    document.documentElement.style.setProperty('--sbw', (w > 0 ? w : 0) + 'px');
+  }
+  sbw(); window.addEventListener('resize', sbw);
   var stage = document.getElementById('cf-stage');
   if (!stage) return;
   var slides = [].slice.call(stage.querySelectorAll('.cf-slide'));
