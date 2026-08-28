@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
 <title>Emergency Dentist Manhasset: Seen in 60 Minutes | Urgent Care Dental</title>
 <meta name="description" content="All-inclusive emergency exam with all X-ray images, including a panoramic scan and a 3D CBCT scan. Clinician on site Friday through Monday, walk-ins welcome, most patients seen within 60 minutes. Exit 33 on the L.I.E. Smile Services of New York.">
 
@@ -435,16 +440,15 @@ html.no-io .reveal{opacity:1;transform:none;transition:none}
 .cf-card{
   height:100%;display:flex;flex-direction:column;gap:14px;text-align:left;
   padding:28px 26px;border-radius:16px;
-  background:rgba(11,29,58,.6);
-  border:1px solid rgba(191,233,255,.16);
-  backdrop-filter:blur(3px);
+  background:rgba(191,233,255,.05);
+  border:1px solid rgba(191,233,255,.14);
+  backdrop-filter:blur(2px);
   transition:border-color .45s ease,background .45s ease,box-shadow .45s ease;
 }
 .cf-slide[data-active="true"] .cf-card{
-  background:linear-gradient(rgba(11,29,58,.94),rgba(9,24,49,.92));
-  border-color:rgba(200,184,232,.5);
-  backdrop-filter:blur(8px);
-  box-shadow:0 22px 60px rgba(2,8,18,.55);
+  background:rgba(191,233,255,.08);
+  border-color:rgba(200,184,232,.34);
+  box-shadow:0 16px 44px rgba(2,8,18,.34);
 }
 .cf-slide[data-active="true"]{cursor:default}
 .cf-icon{width:34px;height:34px;flex:0 0 auto;stroke:var(--lavender);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
@@ -495,8 +499,8 @@ html.no-io .reveal{opacity:1;transform:none;transition:none}
   .cf-wrap{overflow-x:clip;overflow-y:visible}
   .cf-controls{justify-content:center}
   .cf-hint{text-align:center}
-  .cf-stage{height:400px;perspective:1400px}
-  .cf-slide{width:80vw;max-width:340px;height:380px;margin-left:-40vw}
+  .cf-stage{height:400px;perspective:1000px}
+  .cf-slide{width:76vw;max-width:330px;height:380px;margin-left:-38vw}
   .cf-card{padding:24px 22px;gap:12px}
   .cf-card h3{font-size:1.4rem}
   .cf-controls{gap:12px;margin-top:26px}
@@ -1181,13 +1185,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
 })();
 </script>
-<template id="__bundler_thumbnail" data-bg-color="#0B1D3A">
-  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="600" cy="330" r="150" fill="#C8102E"/>
-    <text x="600" y="380" text-anchor="middle" font-family="Georgia,serif" font-size="150" fill="#F7F4EC">SS</text>
-    <text x="600" y="560" text-anchor="middle" font-family="Georgia,serif" font-size="72" fill="#C8B8E8">Urgent Care Dental</text>
-  </svg>
-</template>
 <script>
 (function(){
   function sbw(){
@@ -1205,15 +1202,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   function layout(){
     var w = slides[0].offsetWidth || 360;
     var narrow = window.innerWidth <= 760;
-    var step = w * (narrow ? 0.96 : 0.9);
-    var rot = narrow ? 12 : 40;
-    var visible = narrow ? 1 : 3;
+    var step = w * (narrow ? 0.5 : 0.62);
+    var rot = narrow ? 30 : 40;
+    var visible = narrow ? 2 : 3;
     slides.forEach(function(s, i){
       var off = i - idx, abs = Math.abs(off), sign = off < 0 ? -1 : 1;
-      var scale = narrow ? Math.max(0.86, 1 - abs * 0.09) : Math.max(0.62, 1 - abs * 0.1);
-      var z = -abs * (narrow ? 40 : 130);
+      var scale = Math.max(0.62, 1 - abs * 0.1);
+      var z = -abs * (narrow ? 90 : 130);
       s.style.transform = 'translateX(' + (off * step) + 'px) translateZ(' + z + 'px) rotateY(' + (-sign * Math.min(abs,1) * rot - (abs>1 ? sign*6*(abs-1) : 0)) + 'deg) scale(' + scale + ')';
-      s.style.opacity = abs === 0 ? 1 : narrow ? (abs === 1 ? 0.42 : 0) : abs === 1 ? 0.26 : abs === 2 ? 0.13 : abs <= visible ? 0.06 : 0;
+      s.style.opacity = abs === 0 ? 1 : abs === 1 ? 0.45 : abs === 2 ? 0.22 : abs <= visible ? 0.1 : 0;
       s.style.zIndex = String(100 - abs);
       s.style.pointerEvents = abs === 0 || abs > visible ? 'none' : 'auto';
       s.setAttribute('data-active', abs === 0 ? 'true' : 'false');
