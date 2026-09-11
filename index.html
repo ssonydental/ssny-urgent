@@ -211,15 +211,15 @@ main{position:relative;z-index:3}
 }
 .call-pill:hover{background:var(--red-bright);transform:translateY(-1px)}
 .call-pill:focus-visible,.btn:focus-visible,.modal-close:focus-visible{outline:2px solid var(--aqua);outline-offset:3px}
-.sm-mark{font-size:.5em;vertical-align:super;line-height:0;margin-left:1px;font-weight:600;letter-spacing:.02em;opacity:.85}
+.sm-mark{font-size:.36em;vertical-align:baseline;line-height:0;margin-left:1px;font-weight:600;letter-spacing:.02em;opacity:.85}
 .topbar-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
 .book-pill{
-  background:transparent;color:var(--pearl);font-family:'Inter',sans-serif;font-weight:600;font-size:.88rem;
-  padding:10px 20px;border-radius:100px;border:1px solid rgba(247,244,236,.4);cursor:pointer;
+  background:var(--aqua);color:#fff;font-family:'Inter',sans-serif;font-weight:600;font-size:.88rem;
+  padding:10px 20px;border-radius:100px;border:1px solid transparent;cursor:pointer;
   display:inline-flex;align-items:center;text-decoration:none;
   transition:border-color .2s,transform .2s,background .2s;white-space:nowrap;flex-shrink:0;line-height:1.6;
 }
-.book-pill:hover{border-color:var(--aqua);background:rgba(191,233,255,.08);transform:translateY(-1px)}
+.book-pill:hover{background:#2ab9f0;transform:translateY(-1px)}
 .book-pill:focus-visible{outline:2px solid var(--aqua);outline-offset:3px}
 
 /* ---------- sections ---------- */
@@ -257,8 +257,11 @@ h2{font-size:clamp(1.9rem,4vw,2.9rem);margin-bottom:18px}
 }
 .btn-call{background:var(--red);color:#fff}
 .btn-call:hover{background:var(--red-bright);transform:translateY(-2px)}
-.btn-ghost{border:1px solid rgba(247,244,236,.35);color:var(--pearl);background:transparent}
-.btn-ghost:hover{border-color:var(--lavender);transform:translateY(-2px)}
+.btn-ghost{border:1px solid transparent;color:#fff;background:var(--aqua);animation:ssony-book-glow 2.8s ease-in-out infinite;will-change:box-shadow}
+.btn-ghost:hover{background:#2ab9f0;transform:translateY(-2px)}
+@media (prefers-reduced-motion:reduce){
+  .btn-ghost{animation:none;box-shadow:0 0 18px 3px rgba(0,164,228,.32)}
+}
 .hero-note{margin-top:26px;font-size:.85rem;color:var(--ink-faint)}
 .hero-note strong{color:var(--pearl)}
 .hero-address{
@@ -511,6 +514,14 @@ html.no-io .reveal{opacity:1;transform:none;transition:none}
 @media (prefers-reduced-motion:reduce){.cf-slide{transition:none}}
 
 /* ---------- call CTA glow ---------- */
+@keyframes ssony-book-glow{
+  0%,100%{box-shadow:0 0 0 0 rgba(0,164,228,0),0 0 14px 1px rgba(0,164,228,.28)}
+  50%{box-shadow:0 0 0 4px rgba(0,164,228,.12),0 0 30px 6px rgba(0,164,228,.5)}
+}
+.book-pill{animation:ssony-book-glow 2.8s ease-in-out infinite;will-change:box-shadow}
+@media (prefers-reduced-motion:reduce){
+  .book-pill{animation:none;box-shadow:0 0 18px 3px rgba(0,164,228,.32)}
+}
 @keyframes ssony-call-glow{
   0%,100%{box-shadow:0 0 0 0 rgba(200,16,46,0),0 0 14px 1px rgba(200,16,46,.28)}
   50%{box-shadow:0 0 0 4px rgba(227,24,55,.12),0 0 30px 6px rgba(227,24,55,.5)}
@@ -668,7 +679,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   <div class="topbar-actions">
     <a class="call-pill" href="tel:5165007400" data-track="call" data-loc="topbar">Call (516) 500-7400</a>
-    <a class="book-pill" href="#book" data-track="book" data-loc="topbar">Book online</a>
+    <a class="book-pill" href="#book" data-track="book" data-loc="topbar">Book Online</a>
   </div>
 </header>
 
@@ -678,16 +689,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section data-depth="hero">
     <div class="copy reveal">
       <p class="price-badge">Same-day emergency appointments available</p>
-      <h1>We see what's causing the <span style="color:var(--lavender)">pain.</span></h1>
-      <p class="hero-sub">And we treat it the same day.</p>
+      <h1>We See What's Causing the <span style="color:var(--lavender)">Pain.</span></h1>
+      <p class="hero-sub">And We Treat It the Same Day.</p>
       <address class="hero-address">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 6.2 12.3 6.5 12.6.3.3.8.3 1 0C12.8 21.3 19 14.2 19 9c0-3.9-3.1-7-7-7zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2z"></path></svg>
         <span>444 Community Drive, Suite 309 &middot; <span class="addr-city">Manhasset, NY 11030</span></span>
       </address>
       <p class="lede">One visit covers your exam and all X-ray images, including a panoramic scan and a 3D CBCT scan, with no surprise fees. Most patients seen within 60 minutes, right off Exit 33 on the L.I.E.</p>
       <div class="cta-row">
-        <a class="btn btn-call" href="tel:5165007400" data-track="call" data-loc="hero">Call now to get seen today</a>
-        <a class="btn btn-ghost" href="#book" data-track="book" data-loc="hero">Book online</a>
+        <a class="btn btn-call" href="tel:5165007400" data-track="call" data-loc="hero">Call Now to Get Seen Today</a>
+        <a class="btn btn-ghost" href="#book" data-track="book" data-loc="hero">Book Online</a>
       </div>
       <p class="hero-note"><strong>Walk-ins accepted</strong> · Exam, panoramic scan & 3D CBCT scan included · On-site oral surgeons</p>
       <!-- REVIEWS: update rating + count here -->
@@ -699,7 +710,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <svg viewBox="0 0 20 20" fill="#F5B325" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg>
           <svg viewBox="0 0 20 20" fill="#F5B325" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg>
         </span>
-        <span class="score">4.9</span>
         <span class="divider" aria-hidden="true"></span>
         <span class="count">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.4a5.5 5.5 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.6-5.2 3.6-8.8z"></path><path fill="#34A853" d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3a7.2 7.2 0 0 1-10.7-3.8H1.3v3.1A12 12 0 0 0 12 24z"></path><path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6H1.3a12 12 0 0 0 0 10.8z"></path><path fill="#EA4335" d="M12 4.8c1.8 0 3.4.6 4.6 1.8l3.4-3.4A12 12 0 0 0 1.3 6.6l4 3.1A7.2 7.2 0 0 1 12 4.8z"></path></svg>
@@ -714,7 +724,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section data-depth="symptoms">
     <div class="copy reveal" style="max-width:1120px">
       <p class="eyebrow"><span class="tick">●</span> Common Symptoms</p>
-      <h2>It never starts as an emergency.</h2>
+      <h2>It Never Starts as an Emergency.</h2>
       <p class="lede">It starts small — a dull ache you can almost ignore. Sensitivity to cold. A crack you can't see. By the time it hurts, the problem is already deeper than the surface. We treat all of it, same day:</p>
       <div class="cf-wrap">
         <div class="cf-stage" id="cf-stage" tabindex="0" role="region" aria-label="Emergency conditions we treat, carousel">
@@ -835,7 +845,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section data-depth="nerve">
     <div class="copy reveal">
       <p class="eyebrow"><span class="tick">●</span> Why It Hurts</p>
-      <h2>Pain doesn't wait for a good time.</h2>
+      <h2>Pain Doesn't Wait for a Good Time.</h2>
       <p class="lede">A cracked tooth, a lost filling, an ache that won't quit. Small problems rarely stay small. Painkillers buy you a few hours. They don't fix what's underneath.</p>
       <p class="lede">Same-day care finds the actual cause and treats it, so you're not stuck guessing until Monday.</p>
     </div>
@@ -845,11 +855,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section data-depth="infection">
     <div class="copy right reveal">
       <p class="eyebrow" style="color:var(--red-bright)"><span class="tick" style="color:var(--red-bright)">●</span> Don't Wait</p>
-      <h2>The longer it waits, the <span class="danger">more it costs.</span></h2>
+      <h2>The Longer It Waits, the <span class="danger">More It Costs.</span></h2>
       <p class="lede">Swelling, spreading pain, or a fever aren't things to sleep on. Left alone, a small issue can turn into a much bigger, more expensive one.</p>
       <p class="lede">That's exactly what we're built for: emergency dentists and oral surgeons on site.</p>
       <div class="cta-row">
-        <a class="btn btn-call" href="tel:5165007400" data-track="call" data-loc="infection">Something feel urgent? Call now</a>
+        <a class="btn btn-call" href="tel:5165007400" data-track="call" data-loc="infection">Something Feel Urgent? Call Now</a>
       </div>
     </div>
   </section>
@@ -858,7 +868,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section data-depth="relief">
     <div class="copy reveal">
       <p class="eyebrow"><span class="tick">●</span> Why Choose Us</p>
-      <h2>From "get me out of pain" to <span class="accent">done, in one visit.</span></h2>
+      <h2>From "Get Me Out of Pain" to <span class="accent">Done, in One Visit.</span></h2>
       <p class="lede">Diagnosis, X-rays, and treatment under one roof. The nation's first urgent care dental clinic.</p>
       <div class="why-grid">
         <div class="why-card"><p class="big">All-in</p><p class="small">Exam plus all X-ray images: panoramic scan and 3D CBCT scan</p></div>
@@ -878,7 +888,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="partners">
       <div class="fin-intro">
         <p class="eyebrow"><span class="tick">●</span> Flexible Payment</p>
-        <h2>Cost won't keep you in pain.</h2>
+        <h2>Cost Won't Keep You in Pain.</h2>
         <p>We offer 0% financing for every credit type, so an emergency never has to wait on your wallet.</p>
       </div>
       <p class="plabel">Financing partners we accept</p>
@@ -901,27 +911,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section data-depth="what_to_expect">
     <div class="copy reveal" style="max-width:1080px">
       <p class="eyebrow"><span class="tick">●</span> What to Expect</p>
-      <h2>Three steps, <span class="accent">start to relief.</span></h2>
+      <h2>Three Steps, <span class="accent">Start to Relief.</span></h2>
       <div class="steps">
         <div class="step">
           <span class="n">Step 01</span>
-          <h3>Call or book online</h3>
+          <h3>Call or Book Online</h3>
           <p>Tell us what hurts. We'll let you know when to come in, often right away.</p>
         </div>
         <div class="step">
           <span class="n">Step 02</span>
-          <h3>Get evaluated</h3>
+          <h3>Get Evaluated</h3>
           <p>Most patients are seen within 60 minutes. Your exam, panoramic scan, and 3D CBCT scan all happen on site.</p>
         </div>
         <div class="step">
           <span class="n">Step 03</span>
-          <h3>Leave with a plan</h3>
+          <h3>Leave With a Plan</h3>
           <p>You'll know what's wrong, what it takes to fix it, and you'll leave out of pain.</p>
         </div>
       </div>
       <div class="cta-row" style="margin-top:14px">
         <a class="btn btn-call" href="tel:5165007400" data-track="call" data-loc="what_to_expect">Call (516) 500-7400</a>
-        <a class="btn btn-ghost" href="#book" data-track="book" data-loc="what_to_expect">Book online</a>
+        <a class="btn btn-ghost" href="#book" data-track="book" data-loc="what_to_expect">Book Online</a>
       </div>
     </div>
   </section>
@@ -930,7 +940,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section data-depth="faq">
     <div class="copy reveal" style="max-width:920px">
       <p class="eyebrow"><span class="tick">●</span> Emergency Dental FAQ</p>
-      <h2>What patients ask us most.</h2>
+      <h2>What Patients Ask Us Most.</h2>
       <div class="faq-list">
         <details class="faq-item">
           <summary><span class="mark" aria-hidden="true">+</span>What counts as a dental emergency?</summary>
@@ -968,7 +978,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section data-depth="visit">
     <div class="copy reveal" style="max-width:1080px">
       <p class="eyebrow"><span class="tick">●</span> Visit Us</p>
-      <h2>Right off Exit 33 on the L.I.E.</h2>
+      <h2>Right Off Exit 33 on the L.I.E.</h2>
       <p class="lede">Free parking on site. If you're in pain now, call on your way and we'll have a room ready.</p>
       <div class="visit-grid">
         <div class="map-frame">
@@ -979,7 +989,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="k">Address</span>
             <address>444 Community Drive, Suite 309<br>Manhasset, NY 11030</address>
             <p class="sub">Exit 33, Long Island Expressway · Free on-site parking</p>
-            <a class="map-cta" href="https://www.google.com/maps/dir//smile+services+of+new+york/@40.7736343,-73.7432809,13z" target="_blank" rel="noopener" data-track="directions">Get directions</a>
+            <a class="map-cta" href="https://www.google.com/maps/dir//smile+services+of+new+york/@40.7736343,-73.7432809,13z" target="_blank" rel="noopener" data-track="directions">Get Directions</a>
           </div>
           <div class="fact-card">
             <span class="k">Hours</span>
@@ -999,7 +1009,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <style>
-    .final h2 .sm-mark{font-size:.4em;vertical-align:super;line-height:0;margin-left:2px;font-weight:600;letter-spacing:.03em;opacity:.8}
+    .final h2 .sm-mark{font-size:.28em;vertical-align:baseline;line-height:0;margin-left:2px;font-weight:600;letter-spacing:.03em;opacity:.8}
     .final .final-lede{font-family:'Inter',system-ui,sans-serif;max-width:620px;margin:20px auto 30px;line-height:1.6;text-align:center}
   </style>
   <!-- 9 · FINAL CTA -->
@@ -1009,7 +1019,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="lede final-lede">You don't need a diagnosis to be seen, just a time that works. Reserve a same-day visit and we'll take it from there: a complete emergency exam, every X-ray included, and a clear plan to get you out of pain.</p>
       <div class="cta-row" style="justify-content:center">
         <a class="btn btn-call" href="tel:5165007400" data-track="call" data-loc="final">Call (516) 500-7400</a>
-        <a class="btn btn-ghost" href="#book" data-track="book" data-loc="final">Book online</a>
+        <a class="btn btn-ghost" href="#book" data-track="book" data-loc="final">Book Online</a>
       </div>
     </div>
   </section>
@@ -1066,7 +1076,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="fline fstrong">Smile Services of New York, Urgent Care Dental<sup class="sm-mark">SM</sup></span>
       <address>444 Community Drive, Suite 309<br>Manhasset, NY 11030</address>
       <span class="fline"><a href="tel:5165007400" data-track="call" data-loc="footer">(516) 500-7400</a></span>
-      <span class="fline"><a href="https://www.google.com/maps/dir//smile+services+of+new+york/@40.7736343,-73.7432809,13z" target="_blank" rel="noopener" data-track="directions">Get directions →</a></span>
+      <span class="fline"><a href="https://www.google.com/maps/dir//smile+services+of+new+york/@40.7736343,-73.7432809,13z" target="_blank" rel="noopener" data-track="directions">Get Directions →</a></span>
     </div>
     <div class="fcol">
       <span class="fh">Hours</span>
