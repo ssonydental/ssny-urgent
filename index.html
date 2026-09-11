@@ -641,7 +641,9 @@ footer .fhours span:last-child{color:var(--pearl);font-weight:600;white-space:no
   .map-frame{min-height:260px}
   .copy.right{margin-left:0}
   .callbar{display:block}
-  section{padding-top:150px;padding-bottom:80px}
+  section{padding-top:56px;padding-bottom:56px;min-height:0;justify-content:flex-start}
+  section[data-depth="hero"]{padding-top:150px;padding-bottom:40px}
+  section[data-depth="symptoms"]{padding-top:40px}
   footer{padding-bottom:160px}
   .modal-shell{height:94vh;border-radius:16px}
   .brand-logo{height:38px;width:38px}
@@ -836,7 +838,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="cf-counter" aria-live="polite"><span class="cf-now" id="cf-now">01</span> / 11</span>
           <button class="cf-arrow" type="button" id="cf-next" aria-label="Next condition"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg></button>
         </div>
-        <p class="cf-hint">Swipe, click a card, or use your arrow keys.</p>
       </div>
     </div>
   </section>
@@ -1045,7 +1046,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section id="book">
     <div class="book-inner">
       <h2>Book Your Visit</h2>
-      <p class="book-lede">Reserve an appointment in under a minute — choose a time that works for you.</p>
+      <p class="book-lede">Reserve an Appointment in Under a Minute<br>Choose a Time That Works for You.</p>
       <div class="book-card">
         <iframe class="book-frame"
   src="https://schedule.jarvisanalytics.com/frame/ssny22-dtxa?location_id=2721777660597217"
@@ -1093,7 +1094,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
-<div class="callbar"><a href="tel:5165007400" data-track="call" data-loc="sticky_bar">📞 Tap to call, get seen today</a></div>
+<div class="callbar"><a href="tel:5165007400" data-track="call" data-loc="sticky_bar">📞 Tap to Call, Get Seen Today</a></div>
 
 <script>
 (function(){
