@@ -308,10 +308,31 @@ h2{font-size:clamp(1.9rem,4vw,2.9rem);margin-bottom:18px}
 @media (max-width:560px){.hero-address{font-size:.92rem;gap:7px;margin-bottom:22px}}
 
 .reveal{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .7s ease}
+main{overflow-x:hidden;overflow-x:clip}
+.copy.reveal > h1,.copy.reveal > h2,.copy.reveal > h3,.copy.reveal > p,.copy.reveal > address,.copy.reveal > .cta-row,.copy.reveal > .benefits,.copy.reveal > .why-grid,.copy.reveal > .steps,.copy.reveal > .faq-list,
+.fin-intro > .eyebrow,.fin-intro > h2,.fin-intro > p{
+  opacity:0;transform:translateX(-46px);
+  transition:opacity .85s cubic-bezier(.22,.61,.36,1),transform .85s cubic-bezier(.22,.61,.36,1);
+}
+.copy.right.reveal > h1,.copy.right.reveal > h2,.copy.right.reveal > h3,.copy.right.reveal > p,.copy.right.reveal > address,.copy.right.reveal > .cta-row,.copy.right.reveal > .benefits{transform:translateX(46px)}
+.copy.reveal.in > *,.reveal.in.copy > *,.partners.in .fin-intro > *{opacity:1;transform:none}
+.copy.reveal.in > *:nth-child(1),.partners.in .fin-intro > *:nth-child(1){transition-delay:.04s}
+.copy.reveal.in > *:nth-child(2),.partners.in .fin-intro > *:nth-child(2){transition-delay:.13s}
+.copy.reveal.in > *:nth-child(3),.partners.in .fin-intro > *:nth-child(3){transition-delay:.22s}
+.copy.reveal.in > *:nth-child(4){transition-delay:.31s}
+.copy.reveal.in > *:nth-child(5){transition-delay:.4s}
+.copy.reveal.in > *:nth-child(n+6){transition-delay:.48s}
+@media (max-width:760px){
+  .copy.reveal > h1,.copy.reveal > h2,.copy.reveal > h3,.copy.reveal > p,.copy.reveal > address,.copy.reveal > .cta-row,.copy.reveal > .benefits,.copy.reveal > .why-grid,.copy.reveal > .steps,.copy.reveal > .faq-list,
+  .fin-intro > .eyebrow,.fin-intro > h2,.fin-intro > p{transform:translateX(-26px)}
+  .copy.right.reveal > h1,.copy.right.reveal > h2,.copy.right.reveal > h3,.copy.right.reveal > p,.copy.right.reveal > address,.copy.right.reveal > .cta-row,.copy.right.reveal > .benefits{transform:translateX(26px)}
+}
+html.no-io .copy.reveal > *,html.no-io .fin-intro > *{opacity:1!important;transform:none!important;transition:none!important}
 html.no-io .reveal{opacity:1;transform:none;transition:none}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none}
+  .reveal > *,.fin-intro > *{opacity:1!important;transform:none!important;transition:none!important}
   .pano-image{transition:none}
   html{scroll-behavior:auto}
 }
@@ -679,7 +700,7 @@ footer .fhours span:last-child{color:var(--pearl);font-weight:600;white-space:no
   .callbar{display:block}
   section{padding-top:28px;padding-bottom:28px;min-height:0;justify-content:flex-start}
   section[data-depth="hero"]{padding-top:150px;padding-bottom:40px;min-height:0}
-  section[data-depth="symptoms"]{padding-top:40px}
+  section[data-depth="relief"]{padding-top:40px}
   footer{padding-bottom:160px}
   .modal-shell{height:94vh;border-radius:16px}
   .brand-logo{height:38px;width:38px}
@@ -755,6 +776,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </span>
       </div>
       <!-- /REVIEWS -->
+    </div>
+  </section>
+
+  <!-- 5 · WHY US -->
+  <section data-depth="relief">
+    <div class="copy reveal">
+      <p class="eyebrow"><span class="tick">●</span> Why Choose Us</p>
+      <h2>From "Get Me Out of Pain" to <span class="accent">Done, in One Visit.</span></h2>
+      <p class="lede">Diagnosis, x-rays, and treatment under one roof, including emergency teeth extractions, emergency root canal treatments, and wisdom teeth pain. <strong style="font-weight:600">The Nation's First</strong> <span style="color:var(--red-bright);font-weight:600">Urgent Care</span> <span style="color:var(--aqua);font-weight:600">Dental<sup class="sm-mark">SM</sup></span> <strong style="font-weight:600">Clinic.</strong></p>
+      <div class="why-grid">
+        <div class="why-card"><p class="big">Exam + X-rays</p><p class="small">Exam plus all X-ray images: panoramic scan and 3D CBCT scan</p></div>
+        <div class="why-card"><p class="big">60 min</p><p class="small">Most patients seen within the hour</p></div>
+        <div class="why-card"><p class="big">On-site</p><p class="small">Oral surgeons & dental lab on site</p></div>
+        <div class="why-card"><p class="big">7 days</p><p class="small">Early morning to late evening hours.</p></div>
+      </div>
+      <div class="benefits">
+        <span class="benefit"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>No Appointment Needed</span>
+        <span class="benefit"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Walk-Ins Accepted</span>
+        <span class="benefit"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>0% Financing Available</span>
+        <span class="benefit"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>On-Site Dental Lab</span>
+        <span class="benefit"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Oral Surgeons On-Site</span>
+        <span class="benefit"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Same-Day Treatment</span>
+      </div>
     </div>
   </section>
 
@@ -901,27 +945,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- 5 · WHY US -->
-  <section data-depth="relief">
-    <div class="copy reveal">
-      <p class="eyebrow"><span class="tick">●</span> Why Choose Us</p>
-      <h2>From "Get Me Out of Pain" to <span class="accent">Done, in One Visit.</span></h2>
-      <p class="lede">Diagnosis, x-rays, and treatment under one roof, including emergency teeth extractions, emergency root canal treatments, and wisdom teeth pain. <strong style="font-weight:600">The Nation's First</strong> <span style="color:var(--red-bright);font-weight:600">Urgent Care</span> <span style="color:var(--aqua);font-weight:600">Dental<sup class="sm-mark">SM</sup></span> <strong style="font-weight:600">Clinic.</strong></p>
-      <div class="why-grid">
-        <div class="why-card"><p class="big">Exam + X-rays</p><p class="small">Exam plus all X-ray images: panoramic scan and 3D CBCT scan</p></div>
-        <div class="why-card"><p class="big">60 min</p><p class="small">Most patients seen within the hour</p></div>
-        <div class="why-card"><p class="big">On-site</p><p class="small">Oral surgeons & dental lab on site</p></div>
-        <div class="why-card"><p class="big">7 days</p><p class="small">Early morning to late evening hours.</p></div>
-      </div>
-      <div class="benefits">
-        <span class="benefit"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>No Appointment Needed</span>
-        <span class="benefit"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Walk-Ins Accepted</span>
-        <span class="benefit"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>0% Financing Available</span>
-        <span class="benefit"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>On-Site Dental Lab</span>
-        <span class="benefit"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Oral Surgeons On-Site</span>
-        <span class="benefit"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#F5B325" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Same-Day Treatment</span>
-      </div>
-    </div>
+  <!-- 5b · FINANCING -->
+  <section data-depth="financing">
     <div class="partners">
       <div class="fin-intro">
         <p class="eyebrow"><span class="tick">●</span> Flexible Payment Plans <span class="tick">●</span></p>
@@ -931,12 +956,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="plabel">Financing partners we accept</p>
       <div class="marquee">
         <div class="marquee-track">
-          <span class="partner-chip"><img decoding="async" src="assets/logo-carecredit.png" alt="CareCredit"></span>
-          <span class="partner-chip"><img decoding="async" src="assets/logo-cherry.png" alt="Cherry"></span>
+          <span class="partner-chip"><img decoding="async" src="assets/logo-carecredit.png" alt="CareCredit" data-brand="CareCredit" onerror="this.outerHTML=&quot;<span class=\&quot;partner-word\&quot;>&quot;+(this.dataset.brand||this.alt||&quot;&quot;)+&quot;</span>&quot;"></span>
+          <span class="partner-chip"><img decoding="async" src="assets/logo-cherry.png" alt="Cherry" data-brand="Cherry" onerror="this.outerHTML=&quot;<span class=\&quot;partner-word\&quot;>&quot;+(this.dataset.brand||this.alt||&quot;&quot;)+&quot;</span>&quot;"></span>
           <span class="partner-chip"><img decoding="async" src="assets/logo-alphaeon.png" alt="Alphaeon Credit" data-brand="Alphaeon Credit" onerror="this.outerHTML=&quot;<span class=\&quot;partner-word\&quot;>&quot;+(this.alt||this.dataset.brand||&quot;&quot;)+&quot;</span>&quot;"></span>
           <span class="partner-chip"><img decoding="async" src="assets/logo-proceedfinance.png" alt="Proceed Finance" data-brand="Proceed Finance" onerror="this.outerHTML=&quot;<span class=\&quot;partner-word\&quot;>&quot;+(this.alt||this.dataset.brand||&quot;&quot;)+&quot;</span>&quot;"></span>
-          <span class="partner-chip" aria-hidden="true"><img decoding="async" src="assets/logo-carecredit.png" alt=""></span>
-          <span class="partner-chip" aria-hidden="true"><img decoding="async" src="assets/logo-cherry.png" alt=""></span>
+          <span class="partner-chip" aria-hidden="true"><img decoding="async" src="assets/logo-carecredit.png" alt="" data-brand="CareCredit" onerror="this.outerHTML=&quot;<span class=\&quot;partner-word\&quot;>&quot;+(this.dataset.brand||this.alt||&quot;&quot;)+&quot;</span>&quot;"></span>
+          <span class="partner-chip" aria-hidden="true"><img decoding="async" src="assets/logo-cherry.png" alt="" data-brand="Cherry" onerror="this.outerHTML=&quot;<span class=\&quot;partner-word\&quot;>&quot;+(this.dataset.brand||this.alt||&quot;&quot;)+&quot;</span>&quot;"></span>
           <span class="partner-chip" aria-hidden="true"><img decoding="async" src="assets/logo-alphaeon.png" alt="" data-brand="Alphaeon Credit" onerror="this.outerHTML=&quot;<span class=\&quot;partner-word\&quot;>&quot;+(this.alt||this.dataset.brand||&quot;&quot;)+&quot;</span>&quot;"></span>
           <span class="partner-chip" aria-hidden="true"><img decoding="async" src="assets/logo-proceedfinance.png" alt="" data-brand="Proceed Finance" onerror="this.outerHTML=&quot;<span class=\&quot;partner-word\&quot;>&quot;+(this.alt||this.dataset.brand||&quot;&quot;)+&quot;</span>&quot;"></span>
         </div>
@@ -1180,23 +1205,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   const seenDepths = new Set();
   const io = ('IntersectionObserver' in window) ? new IntersectionObserver((entries) => {
     for (const e of entries){
-      if (!e.isIntersecting) continue;
       const el = e.target;
-      if (el.classList.contains('reveal')) el.classList.add('in');
-      const sec = el.closest('section');
-      if (sec && sec.dataset.depth && !seenDepths.has(sec.dataset.depth)){
-        seenDepths.add(sec.dataset.depth);
-        track('scroll_section', {section_name: sec.dataset.depth});
+      if (e.isIntersecting){
+        el.classList.add('in');
+        const sec = el.closest('section');
+        if (sec && sec.dataset.depth && !seenDepths.has(sec.dataset.depth)){
+          seenDepths.add(sec.dataset.depth);
+          track('scroll_section', {section_name: sec.dataset.depth});
+        }
+      } else {
+        /* out of view in either direction: reset so it slides back in next time */
+        el.classList.remove('in');
       }
     }
-  }, {threshold: 0.25}) : null;
+  }, {threshold: 0, rootMargin: '-12% 0px -12% 0px'}) : null;
   if (io){
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    document.querySelectorAll('.reveal, .partners').forEach(el => io.observe(el));
   }
 
   /* fail-open: never leave content hidden if the observer never fires */
   function revealAll(){
-    document.querySelectorAll('.reveal:not(.in)').forEach(el => el.classList.add('in'));
+    document.querySelectorAll('.reveal:not(.in), .partners:not(.in)').forEach(function(el){
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('in');
+    });
   }
   window.addEventListener('load', function(){ setTimeout(revealAll, 1200); });
   setTimeout(revealAll, 2500);
