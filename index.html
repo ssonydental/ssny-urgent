@@ -440,6 +440,23 @@ html.no-io .reveal{opacity:1;transform:none;transition:none}
   color:var(--ink-faint);padding:0 0 20px 30px;max-width:70ch;text-wrap:pretty;
 }
 
+/* ---------- provider strip ---------- */
+.providers{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,28px);margin-top:14px}
+.provider{
+  padding:26px 24px;border-radius:18px;background:rgba(191,233,255,.05);
+  border:1px solid rgba(191,233,255,.14);display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;
+}
+.provider .shot{
+  width:104px;height:104px;border-radius:50%;flex:0 0 auto;overflow:hidden;
+  background:repeating-linear-gradient(135deg,rgba(191,233,255,.10) 0 6px,rgba(191,233,255,.04) 6px 12px);
+  border:1px solid rgba(191,233,255,.18);display:flex;align-items:center;justify-content:center;
+}
+.provider .shot img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;display:block}
+.provider .shot span{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+.provider .pname{font-family:'Playfair Display',serif;font-weight:600;font-size:1.3rem;line-height:1.2;color:var(--pearl);margin:0}
+.provider .pcred{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--aqua);margin:0}
+.provider .pline{font-family:'Inter',sans-serif;font-size:.9rem;line-height:1.55;color:var(--ink-soft);margin:0}
+
 /* ---------- google rating summary ---------- */
 .rating-row{
   display:flex;align-items:center;gap:12px;flex-wrap:wrap;
@@ -703,7 +720,7 @@ footer .fhours span:last-child{color:var(--pearl);font-weight:600;white-space:no
   .cta-row{flex-direction:column;align-items:stretch;width:100%;gap:12px}
   .cta-row .btn{width:100%;text-align:center}
   .faq-list,.faq-item summary,.faq-item .faq-body{text-align:left}
-  .symptom-grid,.why-grid,.visit-grid,.steps{grid-template-columns:1fr}
+  .symptom-grid,.why-grid,.visit-grid,.steps,.providers{grid-template-columns:1fr}
   .benefits{grid-template-columns:1fr;gap:2px}
   .footer-grid{grid-template-columns:1fr;gap:32px}
   .step{padding:22px 20px}
@@ -1008,6 +1025,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="cta-row" style="margin-top:14px">
         <a class="btn btn-call" href="tel:5165007400" data-track="call" data-loc="what_to_expect">Call (516) 500-7400</a>
         <a class="btn btn-ghost" href="#book" data-track="book" data-loc="what_to_expect">Book Online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6b · PROVIDERS -->
+  <section data-depth="providers">
+    <div class="copy reveal" style="max-width:1080px">
+      <p class="eyebrow"><span class="tick">●</span> Who Treats You</p>
+      <h2>The People in the Room.</h2>
+      <p class="lede">Emergency dentists and oral surgeons on site, not on call. You're evaluated and treated by the same team, in the same visit.</p>
+      <div class="providers">
+        <div class="provider">
+          <span class="shot"><img decoding="async" src="assets/doctor-1.jpg" alt="Dr. Jesse C. Doscher" onerror="this.outerHTML=&quot;<span>Headshot</span>&quot;"></span>
+          <p class="pname">Dr. Jesse C. Doscher, DDS, MSc, FACS, PC</p>
+          <p class="pcred">Oral &amp; Maxillofacial Surgery</p>
+          <p class="pline">Dual board-certified in oral and maxillofacial surgery and pathology. Surgical training at Yale&ndash;New Haven Hospital; NYU dental degree. Attending surgeon at St. Barnabas Hospital and a Great Neck native.</p>
+        </div>
+        <div class="provider">
+          <span class="shot"><img decoding="async" src="assets/doctor-2.jpg" alt="Dr. Joshua Stutman" onerror="this.outerHTML=&quot;<span>Headshot</span>&quot;"></span>
+          <p class="pname">Dr. Joshua Stutman, DDS</p>
+          <p class="pcred">General, Restorative &amp; Implant Dentistry</p>
+          <p class="pline">Hospital-trained at Northwell Health, selected as Chief Resident at North Shore University Hospital and Long Island Jewish. Extractions, root canal therapy, and implant restoration.</p>
+        </div>
+        <div class="provider">
+          <span class="shot"><img decoding="async" src="assets/doctor-3.jpg" alt="Dr. Amit Dhar" onerror="this.outerHTML=&quot;<span>Headshot</span>&quot;"></span>
+          <p class="pname">Dr. Amit Dhar, DDS</p>
+          <p class="pcred">General &amp; Restorative Dentistry</p>
+          <p class="pline">More than 25 years of clinical experience, with a focus on comprehensive diagnosis and precise treatment planning. Known for a calm, patient-centered approach that makes treatment easy to understand.</p>
+        </div>
       </div>
     </div>
   </section>
