@@ -322,10 +322,10 @@ main{overflow-x:hidden;overflow-x:clip}
 .copy.reveal.in > *:nth-child(4){transition-delay:.31s}
 .copy.reveal.in > *:nth-child(5){transition-delay:.4s}
 .copy.reveal.in > *:nth-child(n+6){transition-delay:.48s}
-@media (max-width:760px){
+@media (max-width:1000px){
   .copy.reveal > h1,.copy.reveal > h2,.copy.reveal > h3,.copy.reveal > p,.copy.reveal > address,.copy.reveal > .cta-row,.copy.reveal > .benefits,.copy.reveal > .why-grid,.copy.reveal > .steps,.copy.reveal > .faq-list,
-  .fin-intro > .eyebrow,.fin-intro > h2,.fin-intro > p{transform:translateX(-26px)}
-  .copy.right.reveal > h1,.copy.right.reveal > h2,.copy.right.reveal > h3,.copy.right.reveal > p,.copy.right.reveal > address,.copy.right.reveal > .cta-row,.copy.right.reveal > .benefits{transform:translateX(26px)}
+  .fin-intro > .eyebrow,.fin-intro > h2,.fin-intro > p{transform:translateY(26px)}
+  .copy.right.reveal > h1,.copy.right.reveal > h2,.copy.right.reveal > h3,.copy.right.reveal > p,.copy.right.reveal > address,.copy.right.reveal > .cta-row,.copy.right.reveal > .benefits{transform:translateY(26px)}
 }
 html.no-io .copy.reveal > *,html.no-io .fin-intro > *{opacity:1!important;transform:none!important;transition:none!important}
 html.no-io .reveal{opacity:1;transform:none;transition:none}
@@ -691,7 +691,7 @@ footer .fhours span:last-child{color:var(--pearl);font-weight:600;white-space:no
 
 @media (max-width:760px){
   section{padding-left:24px;padding-right:24px}
-  .copy,.final .copy{max-width:100%;text-align:center;margin-left:auto;margin-right:auto}
+  .copy,.final .copy,.copy.right{max-width:100%;width:100%;align-self:stretch;margin-left:0;margin-right:0;text-align:center}
   .copy > *{margin-left:auto;margin-right:auto}
   .hero-address{justify-content:center;text-align:center}
   .why-card,.step{text-align:center;align-items:center}
@@ -709,7 +709,6 @@ footer .fhours span:last-child{color:var(--pearl);font-weight:600;white-space:no
   .step{padding:22px 20px}
   .hours-list div{font-size:.95rem}
   .map-frame{min-height:260px}
-  .copy.right{margin-left:0}
   .callbar{display:block}
   section{padding-top:28px;padding-bottom:28px;min-height:0;justify-content:flex-start}
   section[data-depth="hero"]{padding-top:150px;padding-bottom:40px;min-height:0}
