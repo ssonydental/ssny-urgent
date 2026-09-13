@@ -51,127 +51,71 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Dentist",
-  "name": "Smile Services of New York: Urgent Care Dental",
-  "url": "https://urgent.ssonydental.com/",
-  "telephone": "+15165007400",
-  "priceRange": "Call for pricing",
-  "medicalSpecialty": "Dentistry",
-  "hasMap": "https://maps.google.com/?q=444+Community+Drive+Suite+309+Manhasset+NY+11030",
-  "geo": {"@type": "GeoCoordinates", "latitude": 40.7767, "longitude": -73.7002},
-  "areaServed": [
-    {"@type": "City", "name": "Manhasset"},
-    {"@type": "City", "name": "Great Neck"},
-    {"@type": "City", "name": "Port Washington"},
-    {"@type": "City", "name": "Roslyn"},
-    {"@type": "City", "name": "New Hyde Park"},
-    {"@type": "City", "name": "Garden City"},
-    {"@type": "AdministrativeArea", "name": "Nassau County"},
-    {"@type": "AdministrativeArea", "name": "Queens"}
-  ],
-  "availableService": [
-    {"@type": "MedicalProcedure", "name": "Emergency Tooth Extraction"},
-    {"@type": "MedicalProcedure", "name": "Emergency Root Canal Treatments"},
-    {"@type": "MedicalProcedure", "name": "Wisdom Teeth Pain Treatment"},
-    {"@type": "MedicalProcedure", "name": "Same-Day Emergency Dental Exam"}
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "444 Community Drive, Suite 309",
-    "addressLocality": "Manhasset",
-    "addressRegion": "NY",
-    "postalCode": "11030",
-    "addressCountry": "US"
-  },
-  "openingHoursSpecification": [
+  "@graph": [
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Friday","Saturday","Sunday"],
-      "opens": "06:30",
-      "closes": "22:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday"],
-      "opens": "06:30",
-      "closes": "17:00"
-    }
-  ],
-  "potentialAction": {
-    "@type": "ReserveAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://schedule.jarvisanalytics.com/frame?eoid=14250&elid=14000000000373",
-      "actionPlatform": ["http://schema.org/DesktopWebPlatform","http://schema.org/MobileWebPlatform"]
-    },
-    "result": {"@type": "Reservation", "name": "Emergency dental appointment"}
-  }
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What counts as a dental emergency?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Severe tooth pain, a knocked-out or loose tooth, a cracked or broken tooth, swelling in the face or gums, bleeding that won't stop, or a lost filling or crown that's causing pain. If it hurts or something broke, it's worth getting seen."
+      "@type": "Dentist",
+      "@id": "https://urgent.ssonydental.com/#practice",
+      "name": "Smile Services of New York — Urgent Care Dental",
+      "url": "https://urgent.ssonydental.com/",
+      "telephone": "+1-516-500-7400",
+      "image": "https://urgent.ssonydental.com/assets/pano-xray.jpg",
+      "logo": "https://urgent.ssonydental.com/assets/logo-urgentcare.png",
+      "priceRange": "$$",
+      "medicalSpecialty": "Dentistry",
+      "hasMap": "https://maps.google.com/?q=444+Community+Drive+Suite+309+Manhasset+NY+11030",
+      "description": "Emergency dentist in Manhasset for severe toothaches, emergency tooth extraction, emergency root canal treatment, and wisdom teeth pain. All-inclusive emergency exam with panoramic and 3D CBCT imaging. Oral surgeons on site. Most patients seen within 60 minutes.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "444 Community Drive, Suite 309",
+        "addressLocality": "Manhasset",
+        "addressRegion": "NY",
+        "postalCode": "11030",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.7767,
+        "longitude": -73.7002
+      },
+      "areaServed": ["Manhasset NY", "Queens NY", "Nassau County NY", "Suffolk County NY"],
+      "availableService": [
+        {"@type": "MedicalProcedure", "name": "Emergency Tooth Extraction"},
+        {"@type": "MedicalProcedure", "name": "Emergency Root Canal Treatments"},
+        {"@type": "MedicalProcedure", "name": "Wisdom Teeth Pain Treatment"},
+        {"@type": "MedicalProcedure", "name": "Same-Day Emergency Dental Exam"}
+      ],
+      "openingHoursSpecification": [
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "06:30", "closes": "22:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "06:30", "closes": "22:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "06:30", "closes": "22:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "06:30", "closes": "17:00"}
+      ],
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://schedule.jarvisanalytics.com/frame?eoid=14250&elid=14000000000373",
+          "actionPlatform": ["http://schema.org/DesktopWebPlatform","http://schema.org/MobileWebPlatform"]
+        },
+        "result": {"@type": "Reservation", "name": "Emergency dental appointment"}
       }
     },
     {
-      "@type": "Question",
-      "name": "Do I need an appointment, or can I walk in?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Walk-ins are welcome during clinician hours. You can also book online or call ahead so we can have a room ready the moment you arrive."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can you treat a dental emergency the same day?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Same-day emergency care is what this practice is built for — most patients are seen within about an hour."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What should I do if my tooth gets knocked out?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Handle it by the crown, not the root. Gently rinse it, and if you can, place it back in the socket or keep it in milk. Then get to us right away — a knocked-out tooth has the best chance of being saved within the first hour."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is facial or gum swelling a dental emergency?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes — swelling in the jaw, cheek, or neck can signal a spreading infection or abscess and should be treated quickly. Call us or come in right away."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Should I go to the ER or a dentist for tooth pain?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For tooth pain, infection, or a broken tooth, an emergency dentist can treat the actual cause — an ER usually can't. If you have difficulty breathing or swallowing, or trauma to the head, call 911 first."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What if I can't pay for treatment right now?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cost shouldn't keep you in pain. We offer 0% financing for all credit types, so you can get treated today and handle payment over time."
-      }
+      "@type": "FAQPage",
+      "@id": "https://urgent.ssonydental.com/#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "What counts as a dental emergency?", "acceptedAnswer": {"@type": "Answer", "text": "Severe tooth pain, a knocked-out or loose tooth, a cracked or broken tooth, swelling in the face or gums, bleeding that won't stop, or a lost filling or crown that's causing pain. If it hurts or something broke, it's worth getting seen."}},
+        {"@type": "Question", "name": "Do I need an appointment, or can I walk in?", "acceptedAnswer": {"@type": "Answer", "text": "Walk-ins are welcome during clinician hours. You can also book online or call ahead so we can have a room ready the moment you arrive."}},
+        {"@type": "Question", "name": "Can you treat a dental emergency the same day?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Same-day emergency care is what this practice is built for — most patients are seen within about an hour."}},
+        {"@type": "Question", "name": "What should I do if my tooth gets knocked out?", "acceptedAnswer": {"@type": "Answer", "text": "Handle it by the crown, not the root. Gently rinse it, and if you can, place it back in the socket or keep it in milk. Then get to us right away — a knocked-out tooth has the best chance of being saved within the first hour."}},
+        {"@type": "Question", "name": "Is facial or gum swelling a dental emergency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — swelling in the jaw, cheek, or neck can signal a spreading infection or abscess and should be treated quickly. Call us or come in right away."}},
+        {"@type": "Question", "name": "Should I go to the ER or a dentist for tooth pain?", "acceptedAnswer": {"@type": "Answer", "text": "For tooth pain, infection, or a broken tooth, an emergency dentist can treat the actual cause — an ER usually can't. If you have difficulty breathing or swallowing, or trauma to the head, call 911 first."}},
+        {"@type": "Question", "name": "What if I can't pay for treatment right now?", "acceptedAnswer": {"@type": "Answer", "text": "Cost shouldn't keep you in pain. We offer 0% financing for all credit types, so you can get treated today and handle payment over time."}}
+      ]
     }
   ]
 }
+</script>
 </script>
 
 <link rel="preload" as="image" href="assets/logo-urgentcare.png">
@@ -600,13 +544,13 @@ html.no-io .reveal{opacity:1;transform:none;transition:none}
   0%,100%{box-shadow:0 0 0 0 rgba(200,16,46,0),0 0 14px 1px rgba(200,16,46,.28)}
   50%{box-shadow:0 0 0 4px rgba(227,24,55,.12),0 0 30px 6px rgba(227,24,55,.5)}
 }
-.call-pill,.btn-call,.callbar{
+.call-pill,.btn-call,.callbar a.cb-call{
   animation:ssony-call-glow 2.8s ease-in-out infinite;
   will-change:box-shadow;
 }
-.callbar{animation-duration:3s}
+.callbar a.cb-call{animation-duration:3s}
 @media (prefers-reduced-motion:reduce){
-  .call-pill,.btn-call,.callbar{
+  .call-pill,.btn-call,.callbar a.cb-call{
     animation:none;
     box-shadow:0 0 18px 3px rgba(200,16,46,.32);
   }
@@ -672,9 +616,17 @@ footer .fhours span:last-child{color:var(--pearl);font-weight:600;white-space:no
 
 .callbar{
   display:none;position:fixed;bottom:0;left:0;right:0;z-index:20;
-  background:var(--red);padding:14px 20px calc(14px + env(safe-area-inset-bottom));text-align:center;
+  background:var(--navy);padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+  border-top:1px solid rgba(255,255,255,.1);
 }
-.callbar a{color:#fff;text-decoration:none;font-weight:700;font-size:1.05rem}
+.callbar-inner{display:flex;gap:8px}
+.callbar a{
+  flex:1;display:flex;align-items:center;justify-content:center;
+  color:#fff;text-decoration:none;font-weight:700;font-size:1rem;
+  padding:13px 10px;border-radius:999px;text-align:center;line-height:1.2;
+}
+.callbar a.cb-call{background:var(--red)}
+.callbar a.cb-book{background:var(--aqua)}
 
 /* ---------- booking modal ---------- */
 .modal-overlay{
@@ -1034,7 +986,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="copy reveal" style="max-width:1080px">
       <p class="eyebrow"><span class="tick">●</span> Who Treats You</p>
       <h2>The People in the Room.</h2>
-      <p class="lede">Emergency dentists and oral surgeons on site, not on call. You're evaluated and treated by the same team, in the same visit.</p>
+      <p class="lede">Emergency dentists and oral surgeons on site. You're evaluated and treated by the same team, in the same visit.</p>
       <div class="providers">
         <div class="provider">
           <span class="shot"><img decoding="async" src="assets/doctor-1.jpg" alt="Dr. Jesse C. Doscher" onerror="this.outerHTML=&quot;<span>Headshot</span>&quot;"></span>
@@ -1214,7 +1166,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
-<div class="callbar"><a href="tel:5165007400" data-track="call" data-loc="sticky_bar">📞 Tap to Call, Get Seen Today</a></div>
+<div class="callbar"><div class="callbar-inner"><a class="cb-call" href="tel:5165007400" data-track="call" data-loc="sticky_bar">📞 Tap to Call</a><a class="cb-book" href="#book" data-track="book" data-loc="sticky_bar">Book Online</a></div></div>
 
 <script>
 (function(){
