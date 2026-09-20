@@ -101,9 +101,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {"@type": "MedicalProcedure", "name": "Same-Day Emergency Dental Exam"}
       ],
       "openingHoursSpecification": [
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "06:30", "closes": "22:00"},
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "06:30", "closes": "22:00"},
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "06:30", "closes": "22:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:30", "closes": "17:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "22:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "17:00"},
         {"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "06:30", "closes": "17:00"}
       ],
       "potentialAction": {
@@ -120,7 +120,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "@type": "FAQPage",
       "@id": "https://urgent.ssonydental.com/#faq",
       "mainEntity": [
-        {"@type": "Question", "name": "What are your hours?", "acceptedAnswer": {"@type": "Answer", "text": "Open Friday, Saturday, Sunday and Monday. Walk-ins welcome every open day. Tuesday, Wednesday and Thursday are by appointment only. Friday, Saturday and Sunday 6:30am to 10pm. Monday 6:30am to 5pm."}},
+        {"@type": "Question", "name": "What are your hours?", "acceptedAnswer": {"@type": "Answer", "text": "Open Friday, Saturday, Sunday and Monday. Walk-ins welcome every open day. Tuesday, Wednesday and Thursday are by appointment only. Friday 9:30am to 5pm, Saturday 8am to 10pm, Sunday 9am to 5pm, Monday 6:30am to 5pm."}},
         {"@type": "Question", "name": "What counts as a dental emergency?", "acceptedAnswer": {"@type": "Answer", "text": "Severe tooth pain, a knocked-out or loose tooth, a cracked or broken tooth, swelling in the face or gums, bleeding that won't stop, or a lost filling or crown that's causing pain. If it hurts or something broke, it's worth getting seen."}},
         {"@type": "Question", "name": "Do I need an appointment, or can I walk in?", "acceptedAnswer": {"@type": "Answer", "text": "Walk-ins are welcome any day we're open, Friday through Monday. You can also book online or call ahead so we can have a room ready when you arrive. Tuesday, Wednesday and Thursday are by appointment only."}},
         {"@type": "Question", "name": "Can you treat a dental emergency the same day?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Same-day emergency care is what this practice is built for. Most patients are seen within about an hour."}},
@@ -550,7 +550,7 @@ footer .fcol a:focus-visible,.callbar a:focus-visible,.lede a:focus-visible,.sym
   .partners{width:calc(100vw - var(--sbw,0px));max-width:calc(100vw - var(--sbw,0px));position:relative;left:50%;margin-left:calc(-50vw + var(--sbw,0px)/2)}
   /* the off-grid moves, desktop only */
   .copy.offset{max-width:640px;margin-left:clamp(40px,14vw,220px);position:relative}
-  .copy.offset::before{content:"01";position:absolute;left:-104px;top:6px;font-family:'Archivo',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.02em;color:#6B7B91}
+  .copy.offset::before{content:"";display:none;position:absolute;left:-104px;top:6px;font-family:'Archivo',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.02em;color:#6B7B91}
   .review-grid > .review:nth-child(2){margin-top:30px}
   .review-grid > .review:nth-child(3){margin-top:60px}
   .visit-facts .fact-card{box-shadow:0 10px 26px rgba(11,29,58,.07)}
@@ -603,7 +603,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <p class="hero-note">Exam includes the panoramic image and 3D CBCT scan, the doctor’s diagnosis and treatment plan, and sending your prescription to the pharmacy. Medication cost is separate.</p>
         <div class="hero-more">
-          <p class="hero-walkin"><strong>Walk in Friday to Monday</strong> from 6:30am &middot; Free parking on site</p>
+          <p class="hero-walkin"><strong>Walk in Friday to Monday</strong> &middot; Free parking on site</p>
           <address class="hero-address">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 6.2 12.3 6.5 12.6.3.3.8.3 1 0C12.8 21.3 19 14.2 19 9c0-3.9-3.1-7-7-7zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2z"></path></svg>
             <span>444 Community Drive, Suite 309 &middot; <span class="addr-city">Manhasset, NY 11030</span><br><span style="font-size:.92em">Serving Queens, Nassau County &amp; Suffolk County</span></span>
@@ -869,19 +869,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="provider">
           <span class="shot"><img decoding="async" src="assets/doctor-2.jpg" alt="Dr. Joshua Stutman" onerror="this.outerHTML=&quot;<span>Headshot</span>&quot;"></span>
           <p class="pname">Dr. Joshua Stutman, DDS</p>
-          <p class="pcred">General, Restorative &amp; Implant Dentistry</p>
+          <p class="pcred">General, Restorative, Implant &amp; Cosmetic Dentistry</p>
           <p class="pline">Hospital-trained at Northwell Health, selected as Chief Resident at North Shore University Hospital and Long Island Jewish. Extractions, root canal therapy, and implant restoration.</p>
         </div>
         <div class="provider">
           <span class="shot"><img decoding="async" src="assets/doctor-3.jpg" alt="Dr. Amit Dhar" onerror="this.outerHTML=&quot;<span>Headshot</span>&quot;"></span>
           <p class="pname">Dr. Amit Dhar, DDS</p>
-          <p class="pcred">General, Restorative &amp; Implant Dentistry</p>
+          <p class="pcred">General, Restorative, Implant &amp; Cosmetic Dentistry</p>
           <p class="pline">More than 25 years of clinical experience, with a focus on comprehensive diagnosis and precise treatment planning. Known for a calm, patient-centered approach that makes treatment easy to understand.</p>
         </div>
         <div class="provider">
           <span class="shot"><img decoding="async" src="assets/doctor-4.png" alt="Dr. Daniel Arzanipour" onerror="this.outerHTML=&quot;<span>Headshot</span>&quot;"></span>
           <p class="pname">Dr. Daniel Arzanipour, DDS</p>
-          <p class="pcred">General, Restorative &amp; Implant Dentistry</p>
+          <p class="pcred">General, Restorative, Implant &amp; Cosmetic Dentistry</p>
           <p class="pline">NYU College of Dentistry graduate, with post-graduate residency training at Bellevue and Gouverneur Hospitals in Manhattan. Also holds a master's degree in biochemical, cell, and molecular biology. Focused on giving patients the knowledge and confidence to understand their own treatment.</p>
         </div>
         <div class="provider">
@@ -902,7 +902,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="faq-list">
         <details class="faq-item">
           <summary><span class="mark" aria-hidden="true">+</span>What are your hours?</summary>
-          <p class="answer">Open Friday, Saturday, Sunday and Monday. Walk-ins welcome every open day. Tuesday, Wednesday and Thursday are by appointment only. Friday, Saturday and Sunday we are open 6:30am to 10pm, and Monday 6:30am to 5pm.</p>
+          <p class="answer">Open Friday, Saturday, Sunday and Monday. Walk-ins welcome every open day. Tuesday, Wednesday and Thursday are by appointment only. Friday 9:30am to 5pm, Saturday 8am to 10pm, Sunday 9am to 5pm, and Monday 6:30am to 5pm.</p>
         </details>
         <details class="faq-item">
           <summary><span class="mark" aria-hidden="true">+</span>What counts as a dental emergency?</summary>
@@ -956,9 +956,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="fact-card">
             <span class="k">Hours</span>
             <div class="hours-list" id="hours-list">
-              <div data-day="5"><span>Friday</span><span>6:30am &ndash; 10pm</span></div>
-              <div data-day="6"><span>Saturday</span><span>6:30am &ndash; 10pm</span></div>
-              <div data-day="0"><span>Sunday</span><span>6:30am &ndash; 10pm</span></div>
+              <div data-day="5"><span>Friday</span><span>9:30am &ndash; 5pm</span></div>
+              <div data-day="6"><span>Saturday</span><span>8:00am &ndash; 10pm</span></div>
+              <div data-day="0"><span>Sunday</span><span>9:00am &ndash; 5pm</span></div>
               <div data-day="1"><span>Monday</span><span>6:30am &ndash; 5pm</span></div>
               <div data-day="2" data-closed="true"><span>Tuesday</span><span>By Appointment Only</span></div>
               <div data-day="3" data-closed="true"><span>Wednesday</span><span>By Appointment Only</span></div>
@@ -1032,9 +1032,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="fcol">
       <span class="fh">Hours</span>
       <div class="fhours">
-        <div><span>Friday</span><span>6:30am &ndash; 10pm</span></div>
-        <div><span>Saturday</span><span>6:30am &ndash; 10pm</span></div>
-        <div><span>Sunday</span><span>6:30am &ndash; 10pm</span></div>
+        <div><span>Friday</span><span>9:30am &ndash; 5pm</span></div>
+        <div><span>Saturday</span><span>8:00am &ndash; 10pm</span></div>
+        <div><span>Sunday</span><span>9:00am &ndash; 5pm</span></div>
         <div><span>Monday</span><span>6:30am &ndash; 5pm</span></div>
         <div class="fclosed"><span>Tuesday</span><span>By Appointment Only</span></div>
         <div class="fclosed"><span>Wednesday</span><span>By Appointment Only</span></div>
@@ -1073,8 +1073,8 @@ setTimeout(function(){ document.documentElement.classList.add('reveal-all'); }, 
   /* ---------- live open / closed status (America/New_York) ---------- */
   /* 0=Sun … 6=Sat. open/close in minutes from midnight; null = closed */
   var HOURS = {
-    0: [390, 1320], 1: [390, 1020], 2: null, 3: null, 4: null,
-    5: [390, 1320], 6: [390, 1320]
+    0: [540, 1020], 1: [390, 1020], 2: null, 3: null, 4: null,
+    5: [570, 1020], 6: [480, 1320]
   };
   var DAY_NAMES = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 
