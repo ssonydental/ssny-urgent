@@ -259,10 +259,15 @@ h1{font-size:2.05rem;font-weight:700;letter-spacing:-.015em;line-height:1.12;mar
   .btn-call,.call-pill,.callbar a.cb-call{animation:none;box-shadow:0 0 16px 3px rgba(200,16,46,.22)}
   .btn-ghost,.book-pill,.callbar a.cb-book{animation:none;box-shadow:0 0 16px 3px rgba(15,102,144,.22)}
 }
-.hero-note{margin-top:16px;font-size:.84rem;line-height:1.55;color:var(--ink-faint)}
+.hero-note{margin-top:16px;font-size:.84rem;line-height:1.55;color:#000}
 .hero-walkin{font-size:.92rem;line-height:1.55;color:var(--ink-soft)}
 .hero-walkin strong{color:var(--ink);font-weight:600}
 .hero-note strong{color:var(--ink)}
+.hero-mobile-photo{display:block;width:calc(100vw - var(--sbw,0px));max-width:none;margin:20px 0 4px -20px}
+.hero-mobile-photo img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:center 45%}
+@media (min-width:700px){.hero-mobile-photo img{aspect-ratio:auto;height:clamp(380px,44vw,620px)}}
+@media (min-width:700px){.hero-mobile-photo{margin:28px 0 8px -40px}}
+@media (min-width:1041px){.hero-mobile-photo{margin:32px 0 8px calc(-1*clamp(40px,6vw,80px))}}
 /* pushed below the first screen on purpose */
 .hero-more{margin-top:26px;padding-top:20px;border-top:1px solid var(--rule);display:flex;flex-direction:column;gap:16px}
 .hero-address{display:flex;align-items:flex-start;gap:9px;font-style:normal;font-size:.95rem;line-height:1.5;color:var(--ink-soft)}
@@ -595,18 +600,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section data-depth="hero">
     <div class="hero-grid">
       <div class="copy">
-        <p class="hero-kicker">Emergency Dentist in Manhasset. Treated the Same Day.</p>
+        <p class="hero-kicker">Same Day Emergency Dentist Appointments Available</p>
         <h1>We See What's Causing the <span class="danger">Pain.</span></h1>
+        <picture class="hero-mobile-photo"><img src="assets/hero-toothache.png" alt="Woman holding her jaw in tooth pain" loading="eager" decoding="async" onerror="this.style.display='none'"></picture>
+        <!-- hero CTAs hidden for now; restore by removing this comment wrapper
         <div class="cta-row">
           <a class="btn btn-call" href="tel:5165007400" data-track="call" data-loc="hero">Call Now to Get Seen Today</a>
           <a class="btn btn-ghost" href="#book" data-track="book" data-loc="hero">Book Online</a>
         </div>
+        -->
         <p class="hero-note">Exam includes the panoramic image and 3D CBCT scan, the doctor’s diagnosis and treatment plan, and sending your prescription to the pharmacy. Medication cost is separate.</p>
         <div class="hero-more">
           <p class="hero-walkin"><strong>Walk in Friday to Monday</strong> &middot; Free parking on site</p>
           <address class="hero-address">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 6.2 12.3 6.5 12.6.3.3.8.3 1 0C12.8 21.3 19 14.2 19 9c0-3.9-3.1-7-7-7zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2z"></path></svg>
-            <span>444 Community Drive, Suite 309 &middot; <span class="addr-city">Manhasset, NY 11030</span><br><span style="font-size:.92em">Serving Queens, Nassau County &amp; Suffolk County</span></span>
+            <span>444 Community Drive, Suite 309<br><span class="addr-city">Manhasset, NY 11030</span><br><span style="font-size:.92em">Serving Queens, Nassau County &amp; Suffolk County</span></span>
           </address>
           <div class="rating-row">
             <span class="stars" role="img" aria-label="Rated 5 out of 5 on Google">
@@ -1052,7 +1060,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="consent" id="consent" role="region" aria-label="Cookie consent">
   <div class="consent-inner">
-    <p>We use cookies to run this site and, with your permission, to measure our advertising. Advertising cookies stay off until you accept.</p>
+    <p>We use cookies and similar tools to run this site and measure how our advertising performs. Accepting allows advertising cookies to be stored on your device.</p>
     <div class="consent-actions">
       <button type="button" id="consent-decline">Decline</button>
       <button type="button" class="primary" id="consent-accept">Accept</button>
