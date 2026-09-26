@@ -263,6 +263,9 @@ h1{font-size:2.05rem;font-weight:700;letter-spacing:-.015em;line-height:1.12;mar
 .hero-walkin{font-size:.92rem;line-height:1.55;color:var(--ink-soft)}
 .hero-walkin strong{color:var(--ink);font-weight:600}
 .hero-note strong{color:var(--ink)}
+.copy > .hero-address{margin-top:14px}
+.hero-h1{margin-top:18px}
+@media (min-width:700px){.hero-cta-mobile{display:none!important}}
 .hero-mobile-photo{display:block;width:calc(100vw - var(--sbw,0px));max-width:none;margin:20px 0 4px -20px}
 .hero-mobile-photo img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:center 45%}
 @media (min-width:700px){.hero-mobile-photo img{aspect-ratio:auto;height:clamp(380px,44vw,620px)}}
@@ -601,21 +604,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-grid">
       <div class="copy">
         <p class="hero-kicker">Same Day Emergency Dentist Appointments Available</p>
-        <h1>We See What's Causing the <span class="danger">Pain.</span></h1>
-        <picture class="hero-mobile-photo"><img src="assets/hero-toothache.png" alt="Woman holding her jaw in tooth pain" loading="eager" decoding="async" onerror="this.style.display='none'"></picture>
-        <!-- hero CTAs hidden for now; restore by removing this comment wrapper
-        <div class="cta-row">
-          <a class="btn btn-call" href="tel:5165007400" data-track="call" data-loc="hero">Call Now to Get Seen Today</a>
-          <a class="btn btn-ghost" href="#book" data-track="book" data-loc="hero">Book Online</a>
-        </div>
-        -->
-        <p class="hero-note">Exam includes the panoramic image and 3D CBCT scan, the doctor’s diagnosis and treatment plan, and sending your prescription to the pharmacy. Medication cost is separate.</p>
-        <div class="hero-more">
-          <p class="hero-walkin"><strong>Walk in Friday to Monday</strong> &middot; Free parking on site</p>
-          <address class="hero-address">
+        <address class="hero-address">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 6.2 12.3 6.5 12.6.3.3.8.3 1 0C12.8 21.3 19 14.2 19 9c0-3.9-3.1-7-7-7zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2z"></path></svg>
             <span>444 Community Drive, Suite 309<br><span class="addr-city">Manhasset, NY 11030</span><br><span style="font-size:.92em">Serving Queens, Nassau County &amp; Suffolk County</span></span>
           </address>
+        <picture class="hero-mobile-photo"><img src="assets/hero-toothache.png" alt="Woman holding her jaw in tooth pain" loading="eager" decoding="async" onerror="this.style.display='none'"></picture>
+        <h1 class="hero-h1">We See What's Causing the <span class="danger">Pain.</span></h1>
+        <div class="cta-row hero-cta-mobile">
+          <a class="btn btn-call" href="tel:5165007400" data-track="call" data-loc="hero">Call Now to Get Seen Today</a>
+          <a class="btn btn-ghost" href="#book" data-track="book" data-loc="hero">Book Online</a>
+        </div>
+        <p class="hero-note">Exam includes the panoramic image and 3D CBCT scan, the doctor’s diagnosis and treatment plan, and sending your prescription to the pharmacy. Medication cost is separate.</p>
+        <div class="hero-more">
+          <p class="hero-walkin"><strong>Walk in Friday to Monday</strong> &middot; Free parking on site</p>
           <div class="rating-row">
             <span class="stars" role="img" aria-label="Rated 5 out of 5 on Google">
             <svg viewBox="0 0 20 20" fill="#E0A100" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg>
