@@ -1317,7 +1317,10 @@ setTimeout(function(){ document.documentElement.classList.add('reveal-all'); }, 
       bookingFired[uid] = true;
     }
     var svc = d.service || {};
-    track('appointment_booked', {
+    /* Event name MUST stay 'jarvis_booking_confirmed': the GTM Custom Event
+       trigger for the GA4 booking_confirmed tag and the Google Ads
+       "Booking Confirmed" conversion listens for exactly this name. */
+    track('jarvis_booking_confirmed', {
       booking_service_id: svc.id || '',
       booking_location_id: (d.location && d.location.location_id) || d.locationID || ''
     });
