@@ -27,22 +27,18 @@
 <meta name="twitter:image" content="https://urgent.ssonydental.com/assets/pano-xray.jpg">
 <meta name="twitter:description" content="Emergency dental care in Manhasset. Open Friday to Monday, walk-ins welcome. Exam with panoramic image and 3D CBCT scan included. Call (516) 500-7400.">
 
-<!-- Consent defaults: advertising storage DENIED until the visitor accepts. -->
+<!-- Consent default (belt-and-suspenders alongside the GTM Consent Default tag).
+     Keep these GRANTED: defaulting ad_storage to 'denied' stopped Google Ads
+     conversions from 9/19 to 10/1. No cookie banner on this page. -->
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('consent', 'default', {
-  ad_storage: 'denied',
-  ad_user_data: 'denied',
-  ad_personalization: 'denied',
-  analytics_storage: 'granted',
-  wait_for_update: 500
+  ad_storage: 'granted',
+  ad_user_data: 'granted',
+  ad_personalization: 'granted',
+  analytics_storage: 'granted'
 });
-try{
-  if (localStorage.getItem('ssny-consent') === 'granted'){
-    gtag('consent', 'update', {ad_storage:'granted', ad_user_data:'granted', ad_personalization:'granted'});
-  }
-}catch(e){}
 </script>
 
 <!-- Google Tag Manager -->
@@ -110,7 +106,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         "@type": "ReserveAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": "https://schedule.jarvisanalytics.com/frame?eoid=14250&elid=14000000000373",
+          "urlTemplate": "https://schedule.jarvisanalytics.com/frame/ssny22-dtxa?location_id=2721777660597217",
           "actionPlatform": ["http://schema.org/DesktopWebPlatform","http://schema.org/MobileWebPlatform"]
         },
         "result": {"@type": "Reservation", "name": "Emergency dental appointment"}
@@ -298,7 +294,7 @@ h1{font-size:2.05rem;font-weight:700;letter-spacing:-.015em;line-height:1.12;mar
   filter:saturate(.55) contrast(1.02);opacity:.16;
   transform:translate(-50%,-50%);will-change:transform;
 }
-main,footer,.callbar,.consent{position:relative;z-index:1}
+main,footer,.callbar{position:relative;z-index:1}
 
 /* ---------- reveals (never above the fold) ---------- */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
@@ -454,25 +450,9 @@ footer .fhours span:last-child{color:var(--ink);font-weight:600;white-space:nowr
 .callbar a.cb-call{background:var(--accent);color:#fff}
 .callbar a.cb-book{background:var(--secondary);color:#fff;border:1px solid var(--secondary)}
 
-/* ---------- consent: above the call bar, never over it ---------- */
-.consent{
-  display:none;position:fixed;left:0;right:0;z-index:20;
-  bottom:calc(var(--bar) + env(safe-area-inset-bottom));
-  padding:14px 16px;background:var(--ground);
-  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
-}
-.consent.show{display:block}
-.consent-inner{display:flex;flex-direction:column;gap:12px}
-.consent p{font-size:.82rem;line-height:1.5;color:var(--ink-soft);margin:0}
-.consent-actions{display:flex;gap:8px}
-.consent button{flex:1;font-family:'Archivo',sans-serif;font-weight:600;font-size:.86rem;cursor:pointer;min-height:44px;padding:11px 16px;border-radius:100px;border:1px solid var(--rule);background:var(--ground);color:var(--ink-soft)}
-.consent button.primary{background:var(--secondary);border-color:var(--secondary);color:#fff}
-.consent button:hover{border-color:var(--ink-faint);color:var(--ink)}
-.consent button.primary:hover{background:#0B5273;color:#fff}
-
 /* focus rings everywhere */
 .btn:focus-visible,.call-pill:focus-visible,.book-pill:focus-visible,.map-cta:focus-visible,
-.faq-item summary:focus-visible,.rating-row a:focus-visible,.consent button:focus-visible,
+.faq-item summary:focus-visible,.rating-row a:focus-visible,
 footer .fcol a:focus-visible,.callbar a:focus-visible,.lede a:focus-visible,.sym:focus-visible{
   outline:2px solid var(--secondary);outline-offset:3px;border-radius:8px;
 }
@@ -504,8 +484,8 @@ footer .fcol a:focus-visible,.callbar a:focus-visible,.lede a:focus-visible,.sym
   .map-frame{height:340px}
   .photo img{height:240px}
   #book{padding:72px 24px 80px}
-  #book .book-card{max-width:760px;padding:14px}
-  #book .book-frame{height:760px}
+  #book .book-card{max-width:1040px;padding:14px}
+  #book .book-frame{height:900px}
   .brand-strip img{height:88px;width:88px}
   .final .copy{max-width:640px;margin:0 auto}
   /* the header can afford its buttons again */
@@ -526,11 +506,6 @@ footer .fcol a:focus-visible,.callbar a:focus-visible,.lede a:focus-visible,.sym
   .status{font-size:.9rem}
   .callbar{display:none}
   footer{padding-bottom:56px}
-  .consent{bottom:0;border-bottom:0;box-shadow:0 -8px 24px rgba(11,29,58,.1)}
-  .consent-inner{flex-direction:row;align-items:center;justify-content:space-between;gap:18px;max-width:1100px;margin:0 auto}
-  .consent p{max-width:68ch}
-  .consent-actions{flex:0 0 auto}
-  .consent button{flex:0 0 auto;padding:12px 22px}
 }
 
 /* ===================================================================
@@ -568,7 +543,7 @@ footer .fcol a:focus-visible,.callbar a:focus-visible,.lede a:focus-visible,.sym
   .review-grid > .review:nth-child(2){margin-top:30px}
   .review-grid > .review:nth-child(3){margin-top:60px}
   .visit-facts .fact-card{box-shadow:0 10px 26px rgba(11,29,58,.07)}
-  #book .book-frame{height:720px}
+  #book .book-frame{height:900px}
   .brand-strip{gap:clamp(28px,6vw,64px);padding:48px 40px}
   .brand-strip img{height:100px;width:100px}
   footer{padding:52px clamp(40px,6vw,80px) 64px}
@@ -1014,7 +989,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="book-lede">Reserve an Appointment in Under a Minute<br>Choose a Time That Works for You.</p>
       <div class="book-card">
         <iframe class="book-frame" loading="lazy"
-          src="https://schedule.jarvisanalytics.com/frame?eoid=14250&elid=14000000000373"
+          src="https://schedule.jarvisanalytics.com/frame/ssny22-dtxa?location_id=2721777660597217"
           allow="geolocation *"
           title="Book an appointment with Smile Services of New York"></iframe>
       </div>
@@ -1065,15 +1040,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="callbar"><div class="callbar-inner"><a class="cb-call" href="tel:5165007400" data-track="call" data-loc="sticky_bar">Tap to Call</a><a class="cb-book" href="#book" data-track="book" data-loc="sticky_bar">Book Online</a></div></div>
 
-<div class="consent" id="consent" role="region" aria-label="Cookie consent">
-  <div class="consent-inner">
-    <p>We use cookies and similar tools to run this site and measure how our advertising performs. Accepting allows advertising cookies to be stored on your device.</p>
-    <div class="consent-actions">
-      <button type="button" id="consent-decline">Decline</button>
-      <button type="button" class="primary" id="consent-accept">Accept</button>
-    </div>
-  </div>
-</div>
 
 <script>
 /* Reveal fail-open registered FIRST, before anything that could throw. */
@@ -1251,38 +1217,6 @@ setTimeout(function(){ document.documentElement.classList.add('reveal-all'); }, 
   }
   sbw();
   window.addEventListener('resize', sbw);
-
-  /* ---------- consent banner: deferred to first scroll or ~2s ---------- */
-  var banner = document.getElementById('consent');
-  var stored = null;
-  try { stored = localStorage.getItem('ssny-consent'); } catch(e){}
-  if (banner && !stored){
-    var shown = false;
-    var showBanner = function(){
-      if (shown) return;
-      shown = true;
-      window.removeEventListener('scroll', showBanner);
-      banner.classList.add('show');
-    };
-    window.addEventListener('scroll', showBanner, {passive:true, once:true});
-    setTimeout(showBanner, 2000);
-  }
-  function setConsent(value){
-    try { localStorage.setItem('ssny-consent', value); } catch(e){}
-    if (window.gtag){
-      gtag('consent', 'update', {
-        ad_storage: value === 'granted' ? 'granted' : 'denied',
-        ad_user_data: value === 'granted' ? 'granted' : 'denied',
-        ad_personalization: value === 'granted' ? 'granted' : 'denied'
-      });
-    }
-    track('consent_' + (value === 'granted' ? 'accepted' : 'declined'), {});
-    if (banner) banner.classList.remove('show');
-  }
-  var acceptBtn = document.getElementById('consent-accept');
-  var declineBtn = document.getElementById('consent-decline');
-  if (acceptBtn) acceptBtn.addEventListener('click', function(){ setConsent('granted'); });
-  if (declineBtn) declineBtn.addEventListener('click', function(){ setConsent('denied'); });
 
   /* ---------- click tracking ---------- */
   document.addEventListener('click', function(e){
