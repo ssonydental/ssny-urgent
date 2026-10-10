@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#FFFFFF">
 <title>Emergency Dentist Manhasset: Seen in 60 Minutes | Urgent Care Dental</title>
-<meta name="description" content="Emergency dentist in Manhasset. Open 7 days a week. Same-day appointments available. Exam with panoramic image and 3D CBCT scan included. (516) 500-7400.">
+<meta name="description" content="Emergency dentist in Manhasset. Same-day appointments available. Exam with panoramic image and 3D CBCT scan included. (516) 500-7400.">
 
 <link rel="canonical" href="https://urgent.ssonydental.com/">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
@@ -16,7 +16,7 @@
 
 <!-- Open Graph -->
 <meta property="og:title" content="Emergency Dentist Manhasset: Seen in 60 Minutes">
-<meta property="og:description" content="Emergency dental care in Manhasset. Open 7 days a week. Same-day appointments available. Exam with panoramic image and 3D CBCT scan included. Call (516) 500-7400.">
+<meta property="og:description" content="Emergency dental care in Manhasset. Same-day appointments available. Exam with panoramic image and 3D CBCT scan included. Call (516) 500-7400.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://urgent.ssonydental.com/">
 <meta property="og:site_name" content="Smile Services of New York">
@@ -25,7 +25,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Emergency Dentist Manhasset: Seen in 60 Minutes">
 <meta name="twitter:image" content="https://urgent.ssonydental.com/assets/pano-xray.jpg">
-<meta name="twitter:description" content="Emergency dental care in Manhasset. Open 7 days a week. Same-day appointments available. Exam with panoramic image and 3D CBCT scan included. Call (516) 500-7400.">
+<meta name="twitter:description" content="Emergency dental care in Manhasset. Same-day appointments available. Exam with panoramic image and 3D CBCT scan included. Call (516) 500-7400.">
 
 <!-- Consent default (belt-and-suspenders alongside the GTM Consent Default tag).
      Keep these GRANTED: defaulting ad_storage to 'denied' stopped Google Ads
@@ -96,15 +96,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {"@type": "MedicalProcedure", "name": "Wisdom Teeth Pain Treatment"},
         {"@type": "MedicalProcedure", "name": "Same-Day Emergency Dental Exam"}
       ],
-      "openingHoursSpecification": [
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "06:00", "closes": "22:00"},
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "06:00", "closes": "22:00"},
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "06:30", "closes": "17:00"},
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "10:00", "closes": "13:00"},
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "10:00", "closes": "19:00"},
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "06:00", "closes": "22:00"},
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "06:00", "closes": "22:00"}
-      ],
       "potentialAction": {
         "@type": "ReserveAction",
         "target": {
@@ -119,7 +110,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "@type": "FAQPage",
       "@id": "https://urgent.ssonydental.com/#faq",
       "mainEntity": [
-        {"@type": "Question", "name": "What are your hours?", "acceptedAnswer": {"@type": "Answer", "text": "Open 7 days a week. Saturday 6am to 10pm, Sunday 6am to 10pm, Monday 6:30am to 5pm, Tuesday 10am to 1pm, Wednesday 10am to 7pm, Thursday 6am to 10pm, and Friday 6am to 10pm."}},
         {"@type": "Question", "name": "What counts as a dental emergency?", "acceptedAnswer": {"@type": "Answer", "text": "Severe tooth pain, a knocked-out or loose tooth, a cracked or broken tooth, swelling in the face or gums, bleeding that won't stop, or a lost filling or crown that's causing pain. If it hurts or something broke, it's worth getting seen."}},
         {"@type": "Question", "name": "Can you treat a dental emergency the same day?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Same-day emergency care is what this practice is built for. Most patients are seen within about an hour."}},
         {"@type": "Question", "name": "What should I do if my tooth gets knocked out?", "acceptedAnswer": {"@type": "Answer", "text": "Handle it by the crown, not the root. Gently rinse it, and if you can, place it back in the socket or keep it in milk. Then get to us right away. A knocked-out tooth has the best chance of being saved within the first hour."}},
@@ -172,13 +162,10 @@ main{position:relative;overflow-x:clip}
 .book-pill{background:var(--secondary);border:1px solid var(--secondary)}
 .topbar-actions{gap:6px}
 .pill-long{display:none}
-@media (max-width:699px){.topbar .status{display:none}.topbar .call-pill,.topbar .book-pill{display:none}}
-@media (min-width:700px){.pill-long{display:inline}.pill-short{display:none}}
-.status{
+@media (max-width:699px){@media (min-width:700px){.pill-long{display:inline}.pill-short{display:none}}
   font-family:'Archivo',sans-serif;font-size:.875rem;font-weight:600;line-height:1.3;
   color:#6B7B91;text-align:right;
 }
-.status[data-state="open"]{color:#15693B}
 
 /* ---------- sections ---------- */
 section{display:flex;flex-direction:column;padding:44px 20px}
@@ -226,9 +213,9 @@ h2{font-size:1.65rem;margin-bottom:14px}
 /* ---------- hero: the only thing that matters at 390px ---------- */
 section[data-depth="hero"]{padding:88px 20px 28px;background:#0B4F72;border-bottom:1px solid var(--rule)}
 section[data-depth="hero"] h1{color:#fff}
-section[data-depth="hero"] .hero-kicker{color:var(--accent)}
-section[data-depth="hero"] .danger{color:#fff}
-section[data-depth="hero"] .hero-sub{color:rgba(255,255,255,.88)}
+section[data-depth="hero"] .hero-kicker{display:inline-block;background:var(--accent);color:#fff;font-size:.88rem;padding:9px 16px;border-radius:5px;margin-bottom:16px}
+section[data-depth="hero"] .danger{color:var(--accent)}
+section[data-depth="hero"] .hero-sub{color:#fff;font-weight:700}
 section[data-depth="hero"] .btn-call{box-shadow:0 1px 2px rgba(0,0,0,.2)}
 section[data-depth="hero"] .btn-ghost{background:#fff;color:var(--secondary);border-color:#fff}
 section[data-depth="hero"] .btn-ghost:hover{background:var(--wash);color:var(--secondary)}
@@ -237,26 +224,27 @@ section[data-depth="hero"] .trust-row .dot{color:rgba(255,255,255,.5)}
 @media (max-width:699px){section[data-depth="hero"] .copy{text-align:center}section[data-depth="hero"] .hero-sub{margin-left:auto;margin-right:auto}}
 .hero-kicker{font-family:'Archivo',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;line-height:1.3}
 .hero-sub{font-size:1rem;line-height:1.5;color:var(--ink-faint);margin:0 0 20px;text-wrap:pretty}
-.trust-row{display:flex;align-items:center;justify-content:flex-start;flex-wrap:nowrap;gap:8px;margin:14px 0 0;font-size:.8rem;font-weight:500;line-height:1;color:var(--ink-faint);white-space:nowrap}
+.trust-row{display:flex;align-items:center;justify-content:flex-start;flex-wrap:nowrap;gap:10px;margin:16px 0 0;font-size:.9rem;font-weight:500;line-height:1;color:var(--ink-faint);white-space:nowrap}
 @media (max-width:699px){.trust-row{justify-content:center}}
-.trust-row > span{display:inline-flex;align-items:center;height:14px}
+.trust-row > span{display:inline-flex;align-items:center;height:16px}
 .trust-row .dot{color:#B7C0CC}
 .trust-row .tr-stars{gap:5px}
 .trust-row .tr-stars .stars{display:inline-flex;align-items:center;gap:1px}
-.trust-row .tr-stars svg{width:11px;height:11px;display:block}
+.trust-row .tr-stars svg{width:13px;height:13px;display:block}
 @media (max-width:359px){.trust-row{font-size:.74rem;gap:6px}}
 .hero-cards{display:flex;flex-direction:column;gap:24px;padding:28px 20px 0}
-.hcard{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:18px 18px 16px;box-shadow:0 2px 8px rgba(11,29,58,.04);display:flex;flex-direction:column;gap:12px}
-.hcard h2{font-size:1.06rem;margin:0}
-.hcard ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;font-size:.92rem;color:var(--ink-soft);line-height:1.45}
-.hcard li{display:flex;gap:10px;align-items:flex-start}
-.hcard li svg{width:18px;height:18px;flex:0 0 auto;margin-top:1px}
+.hcard{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:22px 20px;box-shadow:0 2px 8px rgba(11,29,58,.04);display:flex;flex-direction:column;gap:14px}
+@media (max-width:699px){.hero-cards .hcard:first-child{order:2}.hero-cards .hcard:last-child{order:1}}
+.hcard h2{font-size:1.12rem;margin:0}
+.hcard ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;justify-content:space-evenly;flex:1;gap:12px;font-size:.98rem;color:var(--ink-soft);line-height:1.45}
+.hcard li{display:flex;gap:12px;align-items:flex-start;font-weight:500;color:var(--ink)}
+.hcard li svg{width:20px;height:20px;flex:0 0 auto;margin-top:1px}
 .hcard .muted{font-size:.8rem;color:#6B7B91;margin:0}
 .hcard .addr{display:flex;gap:10px;align-items:flex-start;font-style:normal;font-size:.92rem;line-height:1.45;color:var(--ink-soft)}
 .hcard .addr svg{width:18px;height:18px;flex:0 0 auto;margin-top:2px;fill:var(--secondary)}
 .hcard .addr span{display:flex;flex-direction:column;gap:2px}
-.hcard .addr b{font-weight:700;color:var(--ink)}
-.hcard .addr small{font-size:.82rem;color:#6B7B91}
+.hcard .addr b{font-weight:400;color:var(--ink-soft)}
+.hcard .addr small{font-size:.82rem;font-weight:700;color:var(--ink)}
 .hcard .park{display:flex;gap:10px;align-items:center;font-size:.92rem;color:var(--ink-soft)}
 .hcard .park svg{width:18px;height:18px;flex:0 0 auto}
 .hcard .dir{align-self:flex-start;display:inline-flex;align-items:center;min-height:44px;font-size:.9rem;font-weight:600;color:var(--secondary);text-decoration:underline;text-underline-offset:3px}
@@ -280,8 +268,8 @@ h1{font-size:2.3rem;font-weight:700;letter-spacing:-.015em;line-height:1.08;marg
 }
 .btn-call{background:var(--accent);color:#fff;border:1px solid transparent}
 .btn-call:hover{background:var(--accent-bright);color:#fff}
-.btn-ghost{background:#fff;color:var(--secondary);border:1.5px solid var(--secondary);font-weight:700;font-size:1.05rem;min-height:56px}
-.btn-ghost:hover{background:var(--wash);color:var(--secondary)}
+.btn-ghost{background:var(--secondary);color:#fff;border:1.5px solid var(--secondary);font-weight:700;font-size:1.05rem;min-height:56px}
+.btn-ghost:hover{background:#0D5A7E;color:#fff}
 @keyframes ssony-call-glow{
   0%,100%{box-shadow:0 0 0 0 rgba(200,16,46,0),0 0 12px 1px rgba(200,16,46,.22)}
   50%{box-shadow:0 0 0 4px rgba(227,24,55,.12),0 0 26px 5px rgba(227,24,55,.4)}
@@ -342,8 +330,6 @@ html.no-io .reveal,html.reveal-all .reveal{opacity:1;transform:none;transition:n
 .why-card{padding:16px 18px;border-radius:12px;background:var(--ground);border:1px solid var(--rule)}
 .why-card .big{font-family:'Playfair Display',serif;font-size:1.4rem;line-height:1.1;margin-bottom:4px;color:var(--ink)}
 .why-card .small{font-size:.86rem;color:var(--ink-faint)}
-.now-line{margin-top:18px;font-size:.98rem;line-height:1.6;color:var(--ink-soft);text-wrap:pretty}
-.now-line .now-time{color:var(--ink);font-weight:700;white-space:nowrap}
 .benefits{display:grid;grid-template-columns:1fr;gap:4px;margin-top:20px;padding-top:18px;border-top:1px solid var(--rule)}
 .benefit{display:flex;align-items:center;gap:10px;min-height:32px;font-size:.92rem;font-weight:500;color:var(--ink-soft)}
 .benefit svg{width:16px;height:16px;flex-shrink:0}
@@ -420,13 +406,6 @@ html.no-io .reveal,html.reveal-all .reveal{opacity:1;transform:none;transition:n
 .fact-card .k{font-family:'Archivo',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.04em;color:#6B7B91;display:block;margin-bottom:9px}
 .fact-card address{font-style:normal;color:var(--ink-soft);font-size:.96rem;line-height:1.55}
 .fact-card .sub{font-size:.85rem;color:var(--ink-faint);margin-top:6px}
-.hours-list{display:flex;flex-direction:column;gap:6px}
-.hours-list div{display:flex;justify-content:space-between;gap:14px;font-size:.92rem;color:var(--ink-soft);border-bottom:1px solid var(--rule);padding-bottom:6px}
-.hours-list div:last-child{border-bottom:0;padding-bottom:0}
-.hours-list span:last-child{color:var(--ink);font-weight:600}
-.hours-list div[data-today="true"] span{color:var(--ink);font-weight:700}
-.hours-list div[data-closed="true"] span{color:#6B7B91;font-weight:500}
-.today-tag{font-style:normal;margin-left:8px;padding:2px 8px;border:1px solid var(--rule);border-radius:100px;font-size:.7rem;font-weight:600;color:#6B7B91;white-space:nowrap}
 .map-cta{display:inline-flex;align-items:center;justify-content:center;min-height:48px;margin-top:12px;padding:11px 20px;border:1px solid var(--secondary);border-radius:100px;color:var(--secondary);text-decoration:none;font-weight:600;font-size:.9rem;transition:background .2s,color .2s}
 .map-cta:hover{background:var(--secondary);color:#fff}
 .photo-row{display:grid;grid-template-columns:1fr;gap:14px;margin-top:16px}
@@ -460,10 +439,6 @@ footer .fcol address,footer .fcol .fline{font-style:normal;font-size:.88rem;colo
 footer .fcol .fstrong{color:var(--ink);font-weight:600}
 footer .fcol a{display:inline-flex;align-items:center;min-height:48px;color:var(--secondary);text-decoration:none;font-weight:600}
 footer .fcol a:hover{color:var(--accent)}
-footer .fhours div{display:flex;justify-content:space-between;gap:14px;font-size:.86rem;color:var(--ink-soft);padding:6px 0;border-bottom:1px solid var(--rule)}
-footer .fhours div:last-child{border-bottom:0}
-footer .fhours .fclosed span,footer .fhours .fclosed span:last-child{color:#6B7B91;font-weight:500}
-footer .fhours span:last-child{color:var(--ink);font-weight:600;white-space:nowrap}
 .footer-base{margin-top:28px;padding-top:18px;border-top:1px solid var(--rule);display:flex;flex-direction:column;gap:10px}
 .footer-base .copyright{font-size:.82rem;color:var(--ink-soft)}
 .footer-base .copyright a{color:var(--secondary);text-decoration:none}
@@ -521,7 +496,7 @@ footer .fcol a:focus-visible,.callbar a:focus-visible,.lede a:focus-visible,.sym
   .sym-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:36px 26px}
   .sym-icon{width:44px;height:44px}
   .benefits{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 24px}
-  .footer-grid{grid-template-columns:1.2fr 1fr 1fr;gap:32px}
+  .footer-grid{grid-template-columns:1.2fr 1fr;gap:32px}
   .fin-intro{text-align:center;max-width:720px;margin:0 auto 26px}
   .fin-intro .eyebrow{display:inline-flex}
   .partners .plabel{text-align:center}
@@ -550,8 +525,7 @@ footer .fcol a:focus-visible,.callbar a:focus-visible,.lede a:focus-visible,.sym
   .brand-logo{height:40px;width:40px}
   .wordmark{font-size:.98rem}
   .wordmark .subname{font-size:.62rem}
-  .status{font-size:.9rem}
-  .callbar{display:none}
+    .callbar{display:none}
   footer{padding-bottom:56px}
   .consent{bottom:0;border-bottom:0;box-shadow:0 -8px 24px rgba(11,29,58,.1)}
   .consent-inner{flex-direction:row;align-items:center;justify-content:space-between;gap:18px;max-width:1100px;margin:0 auto}
@@ -625,7 +599,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="wordmark">Smile Services <span>of New York</span><span class="subname"><span class="u1">Urgent Care</span> <span class="u2">Dental</span><sup class="sm-mark">SM</sup></span></div>
   </div>
   <div class="topbar-actions">
-    <span class="status" id="open-status" aria-live="polite"><span id="open-status-text">Open 7 Days a Week</span></span>
     <a class="call-pill" href="tel:5165007400" data-track="call" data-loc="topbar"><span class="pill-long">Call (516) 500-7400</span><span class="pill-short">Call Now</span></a>
     <a class="book-pill" href="#book" data-track="book" data-loc="topbar">Book Online</a>
   </div>
@@ -639,12 +612,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="copy">
         <p class="hero-kicker">Same-Day Emergency Dentist</p>
         <h1 class="hero-h1">We See What's Causing the <span class="danger">Pain.</span></h1>
-        <p class="hero-sub">Walk in hurting, leave with a diagnosis and a plan &mdash; today.</p>
+        <p class="hero-sub">Get Seen Today</p>
         <div class="cta-row hero-cta-mobile" id="hero-ctas">
-          <a class="btn btn-call" href="tel:5165007400" data-track="call" data-loc="hero">Call Now to Get Seen Today</a>
+          <a class="btn btn-call" href="tel:5165007400" data-track="call" data-loc="hero">Call (516) 500-7400</a>
           <a class="btn btn-ghost" href="#book" data-track="book" data-loc="hero">Book Online</a>
         </div>
-        <p class="trust-row"><span>Open 7 days</span><span class="dot">&middot;</span><span>Free parking</span><span class="dot">&middot;</span><span class="tr-stars"><span class="stars" role="img" aria-label="Rated 5 out of 5 on Google"><svg viewBox="0 0 20 20" fill="#E0A100" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg><svg viewBox="0 0 20 20" fill="#E0A100" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg><svg viewBox="0 0 20 20" fill="#E0A100" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg><svg viewBox="0 0 20 20" fill="#E0A100" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg><svg viewBox="0 0 20 20" fill="#E0A100" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg></span><span>Google reviews</span></span></p>
+        <p class="trust-row"><span>Free parking</span><span class="dot">&middot;</span><span class="tr-stars"><span class="stars" role="img" aria-label="Rated 5 out of 5 on Google"><svg viewBox="0 0 20 20" fill="#E0A100" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg><svg viewBox="0 0 20 20" fill="#E0A100" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg><svg viewBox="0 0 20 20" fill="#E0A100" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg><svg viewBox="0 0 20 20" fill="#E0A100" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg><svg viewBox="0 0 20 20" fill="#E0A100" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg></span><span>Google reviews</span></span></p>
       </div>
     </div>
   </section>
@@ -658,7 +631,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#0F6690" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Doctor's diagnosis &amp; treatment plan</li>
         <li><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#0F6690" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Prescription sent to your pharmacy</li>
       </ul>
-      <p class="muted">Medication billed separately.</p>
     </div>
     <div class="hcard">
       <h2>Find us</h2>
@@ -680,15 +652,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="why-grid">
         <div class="why-card"><p class="big">Exam + imaging</p><p class="small">One flat fee covers the exam plus the panoramic image and 3D CBCT scan</p></div>
         <div class="why-card"><p class="big">On-site</p><p class="small">Oral surgeons &amp; dental lab on site</p></div>
-        <div class="why-card"><p class="big">7 days</p><p class="small">Open 7 days a week, same-day appointments available.</p></div>
       </div>
-      <p class="now-line" id="now-line">Same-day appointments available. Book online or call to reserve your time.</p>
       <div class="benefits">
         <span class="benefit"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#0F6690" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Same-Day Treatment</span>
         <span class="benefit"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#0F6690" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Free On-Site Parking</span>
         <span class="benefit"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#0F6690" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>On-Site Dental Lab</span>
         <span class="benefit"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#0F6690" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Oral Surgeons On-Site</span>
-        <span class="benefit"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#0F6690" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Open 7 Days a Week</span>
       </div>
     </div>
   </section>
@@ -945,10 +914,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2>What Patients Ask Us Most.</h2>
       <div class="faq-list">
         <details class="faq-item">
-          <summary><span class="mark" aria-hidden="true">+</span>What are your hours?</summary>
-          <p class="answer">Open 7 days a week. Saturday 6am to 10pm, Sunday 6am to 10pm, Monday 6:30am to 5pm, Tuesday 10am to 1pm, Wednesday 10am to 7pm, Thursday 6am to 10pm, and Friday 6am to 10pm.</p>
-        </details>
-        <details class="faq-item">
           <summary><span class="mark" aria-hidden="true">+</span>What counts as a dental emergency?</summary>
           <p class="answer">Severe tooth pain, a knocked-out or loose tooth, a cracked or broken tooth, swelling in the face or gums, bleeding that won't stop, or a lost filling or crown that's causing pain. If it hurts or something broke, it's worth getting seen.</p>
         </details>
@@ -989,17 +954,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="sub">Exit 33, Long Island Expressway &middot; Free on-site parking</p>
             <a class="map-cta" href="https://www.google.com/maps/dir//smile+services+of+new+york/@40.7736343,-73.7432809,13z" target="_blank" rel="noopener" data-track="directions">Get Directions</a>
           </div>
-          <div class="fact-card">
-            <span class="k">Hours</span>
-            <div class="hours-list" id="hours-list">
-              <div data-day="6"><span>Saturday</span><span>6:00am &ndash; 10pm</span></div>
-              <div data-day="0"><span>Sunday</span><span>6:00am &ndash; 10pm</span></div>
-              <div data-day="1"><span>Monday</span><span>6:30am &ndash; 5pm</span></div>
-              <div data-day="2"><span>Tuesday</span><span>10:00am &ndash; 1pm</span></div>
-              <div data-day="3"><span>Wednesday</span><span>10:00am &ndash; 7pm</span></div>
-              <div data-day="4"><span>Thursday</span><span>6:00am &ndash; 10pm</span></div>
-              <div data-day="5"><span>Friday</span><span>6:00am &ndash; 10pm</span></div>
-            </div>
           </div>
         </div>
       </div>
@@ -1065,17 +1019,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="fline"><a href="tel:5165007400" data-track="call" data-loc="footer">(516) 500-7400</a></span>
       <span class="fline"><a href="https://www.google.com/maps/dir//smile+services+of+new+york/@40.7736343,-73.7432809,13z" target="_blank" rel="noopener" data-track="directions">Get Directions &rarr;</a></span>
     </div>
-    <div class="fcol">
-      <span class="fh">Hours</span>
-      <div class="fhours">
-        <div><span>Saturday</span><span>6:00am &ndash; 10pm</span></div>
-        <div><span>Sunday</span><span>6:00am &ndash; 10pm</span></div>
-        <div><span>Monday</span><span>6:30am &ndash; 5pm</span></div>
-        <div><span>Tuesday</span><span>10:00am &ndash; 1pm</span></div>
-        <div><span>Wednesday</span><span>10:00am &ndash; 7pm</span></div>
-        <div><span>Thursday</span><span>6:00am &ndash; 10pm</span></div>
-        <div><span>Friday</span><span>6:00am &ndash; 10pm</span></div>
-      </div>
     </div>
   </div>
   <div class="footer-base">
@@ -1099,101 +1042,6 @@ setTimeout(function(){ document.documentElement.classList.add('reveal-all'); }, 
 })();
 
 (function(){
-
-  /* ---------- live open / closed status (America/New_York) ---------- */
-  /* 0=Sun … 6=Sat. open/close in minutes from midnight; null = closed */
-  var HOURS = {
-    0: [360, 1320], 1: [390, 1020], 2: [600, 780], 3: [600, 1140],
-    4: [360, 1320], 5: [360, 1320], 6: [360, 1320]
-  };
-  var DAY_NAMES = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-
-  function nyNow(){
-    var parts = new Intl.DateTimeFormat('en-US', {
-      timeZone: 'America/New_York', weekday: 'short', hour: '2-digit',
-      minute: '2-digit', hour12: false
-    }).formatToParts(new Date());
-    var map = {};
-    parts.forEach(function(p){ map[p.type] = p.value; });
-    var wd = {Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[map.weekday];
-    var h = parseInt(map.hour, 10) % 24;
-    return {day: wd, mins: h * 60 + parseInt(map.minute, 10)};
-  }
-  function fmt(mins){
-    var h = Math.floor(mins / 60), m = mins % 60;
-    var ap = h >= 12 ? 'pm' : 'am';
-    var hh = h % 12; if (hh === 0) hh = 12;
-    return hh + (m ? ':' + String(m).padStart(2,'0') : '') + ap;
-  }
-  function nextOpen(fromDay){
-    for (var i = 1; i <= 7; i++){
-      var d = (fromDay + i) % 7;
-      if (HOURS[d]) return {day: d, opens: HOURS[d][0]};
-    }
-    return null;
-  }
-  function updateStatus(){
-    var el = document.getElementById('open-status');
-    var txt = document.getElementById('open-status-text');
-    if (!el || !txt) return;
-    var now, today;
-    try { now = nyNow(); } catch(e){ return; }
-    today = HOURS[now.day];
-
-    if (today && now.mins >= today[0] && now.mins < today[1]){
-      el.setAttribute('data-state','open');
-      txt.textContent = 'Open now until ' + fmt(today[1]);
-    } else if (today && now.mins < today[0]){
-      el.setAttribute('data-state','closed');
-      txt.textContent = 'Closed. Opens today ' + fmt(today[0]);
-    } else {
-      el.setAttribute('data-state','closed');
-      var n2 = nextOpen(now.day);
-      txt.textContent = 'Closed now. Opens ' + DAY_NAMES[n2.day] + ' ' + fmt(n2.opens);
-    }
-
-    var list = document.getElementById('hours-list');
-    if (list){
-      list.querySelectorAll('.today-tag').forEach(function(t){ t.remove(); });
-      list.querySelectorAll('[data-day]').forEach(function(row){
-        if (+row.dataset.day === now.day){
-          row.setAttribute('data-today','true');
-          var tag = document.createElement('em');
-          tag.className = 'today-tag';
-          tag.textContent = 'Today';
-          row.firstElementChild.appendChild(tag);
-        } else {
-          row.removeAttribute('data-today');
-        }
-      });
-    }
-  }
-  function fmt12(mins){
-    var h = Math.floor(mins / 60) % 24, m = mins % 60;
-    var ap = h >= 12 ? 'PM' : 'AM';
-    var hh = h % 12; if (hh === 0) hh = 12;
-    return hh + ':' + String(m).padStart(2,'0') + ' ' + ap;
-  }
-  function updateNowLine(now){
-    var el = document.getElementById('now-line');
-    if (!el) return;
-    var today = HOURS[now.day];
-    if (today && now.mins >= today[0] && now.mins < today[1] - 30){
-      el.innerHTML = 'We\u2019re open until <span class="now-time">' + fmt12(today[1]) + '</span> today. Book online or call and we\u2019ll find you a same-day time. '
-        + 'The most urgent cases are treated first.';
-    } else if (today && now.mins < today[0]){
-      el.innerHTML = 'We open at <span class="now-time">' + fmt12(today[0]) + '</span> today. Book online now to reserve a same-day time.';
-    } else {
-      var n = nextOpen(now.day);
-      el.innerHTML = 'We\u2019re closed for the day. We open <span class="now-time">' + DAY_NAMES[n.day] + ' at ' + fmt12(n.opens) + '</span>. Book online now and we\u2019ll have a time ready for you.';
-    }
-  }
-  function tick(){
-    updateStatus();
-    try { updateNowLine(nyNow()); } catch(e){}
-  }
-  tick();
-  setInterval(tick, 60000);
 
   /* ---------- full-page panoramic parallax ---------- */
   var pano = document.getElementById('pano-bg');
