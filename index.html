@@ -1533,6 +1533,9 @@ html.halloween section[data-depth="hero"] > .hw-crack-over{position:absolute;z-i
 .hw-cbub::after{content:"";position:absolute;right:-6px;bottom:-6px;width:16px;height:16px;background:#FFF6E6;border-radius:2px 2px 10px 2px;transform:skew(20deg,20deg)}
 @keyframes hw-bub{to{opacity:1;transform:none}}
 @media (max-width:699px){.hw-cbub{max-width:170px;font-size:.84rem;right:calc(50% + 40px);bottom:auto;top:calc(50% - 34px);transform-origin:100% 50%}.hw-cbub::after{bottom:auto;top:calc(50% - 8px);right:-7px;transform:rotate(45deg);border-radius:2px}}
+.hw-cbub.hw-cbub-flow{position:relative;right:auto;bottom:auto;top:auto;display:inline-block;margin:22px 0 0;max-width:300px;font-size:.95rem;transform-origin:50% 0;transform:scale(.6) translateY(-10px)}
+.hw-cbub.hw-cbub-flow::after{right:auto;left:28px;bottom:auto;top:-7px;transform:rotate(45deg);border-radius:2px}
+@media (max-width:699px){.hw-cbub.hw-cbub-flow{max-width:260px;font-size:.88rem;right:auto;top:auto}.hw-cbub.hw-cbub-flow::after{left:50%;margin-left:-8px;top:-7px;right:auto}}
 @media (prefers-reduced-motion:reduce){.hw-cbub{animation:none;opacity:1;transform:none}}
 @media (max-width:699px){
   html.halloween section[data-depth="hero"]{padding-top:calc(88px + 150px)}
@@ -1567,6 +1570,7 @@ html.halloween section[data-depth="hero"] > .hw-crack-over{position:absolute;z-i
   deco.appendChild(ck);
   var ckOver=document.createElement('div'); ckOver.className='hw-crack hw-crack-over'; ckOver.setAttribute('aria-hidden','true');
   ckOver.innerHTML=''; hero.appendChild(ckOver);
+  var bub=document.createElement('p'); bub.className='hw-cbub hw-cbub-flow'; bub.setAttribute('aria-hidden','true'); bub.textContent=after?'Too much candy last night? Cracked a tooth on a candy? We can help.':'Happy Halloween from Smile Services of New York'; var trow=hero.querySelector('.trust-row'); if(trow) trow.insertAdjacentElement('afterend',bub);
   if(!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)){
     var ckSvg=ck.innerHTML, heroVis=true;
     function hit(){ hero.classList.add('hw-hit'); setTimeout(function(){ hero.classList.remove('hw-hit'); },400); }
@@ -1575,7 +1579,7 @@ html.halloween section[data-depth="hero"] > .hw-crack-over{position:absolute;z-i
     setInterval(function(){
       if(document.hidden||!heroVis) return;
       ck.style.opacity='0'; ckOver.style.opacity='0';
-      setTimeout(function(){ ck.innerHTML=ckSvg; ckOver.innerHTML=bubHTML; ck.style.opacity='1'; ckOver.style.opacity='1'; hit(); },700);
+      setTimeout(function(){ ck.innerHTML=ckSvg; ckOver.innerHTML=''; ck.style.opacity='1'; ckOver.style.opacity='1'; hit(); },700);
     },11000);
   }
   if(!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)){
